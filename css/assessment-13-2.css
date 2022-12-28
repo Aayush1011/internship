@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero__h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #E70606;
+}
+
+.hero__para {
+    font-size: 20px;
+    font-weight: 400;
+    color: #575757;
+    margin-top: -20px;
+    margin-bottom: 60px;
+}
+
+.feature-card-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 68px;
+    margin: 0 250px;
+}
+
+.feature-card {
+    display: flex;
+    column-gap: 140px;
+    width: 971px;
+    height: 470px;
+    align-items: center;
+}
+
+.feature-card--reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-card__h2 {
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.feature-card__para {
+    font-size: 16px;
+    margin-top: 0px;
+    color: #575757;
+}
+
+.feature-card__button {
+    height: 40px;
+    width: 126px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    background: #E70606;
+    margin-top: 15px;
+}
+
+.feature-card__img {
+    height: 440px;
+    width: 440px;
+    border-radius: 50%;
+    border: 15px solid #F9DBDB;
+
+}

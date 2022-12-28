@@ -1,0 +1,17 @@
+.test {
+    padding-inline-end: 30px;
+    writing-mode: horizontal-lr;
+}
+
+.test-2 {
+    padding-inline-start: 30px;
+    writing-mode: horizontal-lr;
+}
+
+.test-3 {
+    padding-right: 30px;
+}
+
+.test-4 {
+    padding-left: 30px;
+}

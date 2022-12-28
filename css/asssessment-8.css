@@ -1,0 +1,15 @@
+.container {
+    margin: 0 30px;
+    overflow: auto;
+    width: 90%;
+}
+
+.txt1 {
+    float: left;
+    width: 70%;
+}
+
+.txt2 {
+    float: right;
+    width: 30%;
+}
