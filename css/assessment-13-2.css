@@ -67,6 +67,15 @@
     height: 440px;
     width: 440px;
     border-radius: 50%;
-    border: 15px solid #F9DBDB;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
 
+.feature-card__ellipse {
+    position: absolute;
+    height: 455px;
+    width: 455px;
+    background: #F9DBDB;
+    border-radius: 50%;
 }
