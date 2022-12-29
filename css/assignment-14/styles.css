@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --whitish: #E9EDEF;
+    --white: #fff;
+    --light-blue: #7DD0ED;
+    --blue: #27A6D2;
+    --gray: #5F5F5F;
+}
+
+body {
+    background: var(--whitish);
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 100px;
+    column-gap: 30px;
+    margin: 0 auto;
+    width: 70%;
+    justify-content: center;
+}
+
+.card {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 1rem;
+    text-align: center;
+    flex-direction: column;
+    background: var(--white);
+    justify-content: space-between;
+    transition: all 0.5s linear;
+}
+
+.card--basic {
+    grid-area: 1/1/1/1;
+}
+
+.card--pro {
+    grid-area: 1/2/1/2;
+}
+
+.card--premium {
+    grid-area: 1/3/1/3;
+}
+
+.card__header {
+    font-size: 32px;
+    font-weight: 700;
+    border-radius: 10px 10px 0 0;
+    color: var(--white);
+    background: var(--light-blue);
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.card__content {
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    color: #5F5F5F;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+.card__content__price {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.card__content__per-month {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.card__content__feature {
+    font-size: 11px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:hover .card__header {
+    background: var(--blue);
+}
+
+.card:hover .card__content__price {
+    color: var(--blue);
+}
+
+.card:hover .card__content__per-month {
+    color: var(--blue);
+}
+
+.plan-info {
+    grid-area: 2/1/2/span3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--white);
+    padding: 1rem;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+}
+
+.progress-bar {
+    background: var(--whitish);
+    border-radius: 20px;
+    height: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.show-progress {
+    visibility: hidden;
+    background: var(--blue);
+    border-radius: 20px;
+    height: 30px;
+    width: 96%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.card--basic:hover~.plan-info .show-progress--users {
+    visibility: visible;
+    width: 20%;
+}
+
+.card--basic:hover~.plan-info .show-progress--space {
+    visibility: visible;
+    width: 30%;
+}
+
+.card--basic:hover~.plan-info .show-progress--project {
+    visibility: visible;
+    width: 10%;
+}
+
+.card--pro:hover~.plan-info .show-progress--space {
+    visibility: visible;
+    width: 40%;
+}
+
+.card--pro:hover~.plan-info .show-progress--project {
+    visibility: visible;
+    width: 30%;
+}
+
+.card--premium:hover~.plan-info .show-progress--users {
+    visibility: visible;
+    width: 60%;
+}
+
+.card--premium:hover~.plan-info .show-progress--space {
+    visibility: visible;
+    width: 70%;
+}
+
+.card--premium:hover~.plan-info .show-progress--project {
+    visibility: visible;
+    width: 50%;
+}

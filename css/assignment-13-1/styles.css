@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    background: #F6F6F6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+}
+
+.hero__h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero__para {
+    font-size: 20px;
+    font-weight: 400;
+    color: #575757;
+    margin-top: -20px;
+    margin-bottom: 60px;
+}
+
+.card-container {
+    width: 80%;
+    margin: 0 145px;
+    display: flex;
+    column-gap: 1.75rem;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+}
+
+.card__h2 {
+    margin: 32px 58px 0 58px;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.card__para {
+    font-size: 14px;
+    margin: 10px 30px 37px 30px;
+    color: #575757;
+}
+
+.button {
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    margin: 30px 70px;
+}
+
+.button--grey {
+    background: #515151;
+}
+
+.button--blue {
+    background: #0047FF;
+}
+
+.button--dark-grey {
+    background: #40433C;
+}
+
+.button--red {
+    background: #B75F5F;
+}
+
+.card--blue {
+    background: #E4F2FF;
+}
+
+.card--green {
+    background: #D1DFBF;
+}
+
+.card--red {
+    background: #F9DBDB;
+}

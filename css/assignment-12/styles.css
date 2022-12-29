@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --red-value: 255;
+    --blue-value: 0;
+    --green-value: 0;
+    --top-position: 120%;
+    --bottom-position: none;
+    --left-margin: -15px;
+    --white: #fff;
+    --arrow-top-position: none;
+    --arrow-bottom-position: 100%;
+}
+
+.outer-container {
+    margin: 100px 200px;
+}
+
+.container {
+    display: inline-flex;
+    border: 1px solid gainsboro;
+    border-radius: 2px;
+    padding: 1.1rem 2.55rem;
+    column-gap: 50px;
+    align-items: center;
+}
+
+.container * {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.container *:hover {
+    cursor: pointer;
+}
+
+.container__exclamation:hover {
+    color: red;
+}
+
+.container__fingerprint:hover {
+    filter: invert(6%) sepia(100%) saturate(6760%) hue-rotate(248deg) brightness(131%) contrast(142%);
+}
+
+.container__cow__image {
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+    background-image: url("cow.svg");
+}
+
+.container__cow:hover .container__cow__image {
+    background-image: url("cow-hover.svg");
+}
+
+.tooltiptext {
+    visibility: hidden;
+    height: initial;
+    width: initial;
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 0px 0px 15px 3px rgba(var(--red-value), var(--green-value), var(--blue-value), 0.25);
+    white-space: nowrap;
+    position: absolute;
+    top: var(--top-position);
+    left: -200%;
+    bottom: var(--bottom-position);
+    z-index: 1;
+    text-align: center;
+    margin-left: var(--left-margin);
+    background-color: var(--white);
+}
+
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: var(--arrow-top-position);
+    bottom: var(--arrow-bottom-position);
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--white) transparent;
+}
+
+.container__exclamation:hover .tooltiptext--exclamation {
+    visibility: visible;
+}
+
+.container__fingerprint:hover .tooltiptext--fingerprint {
+    visibility: visible;
+    --red-value: 0;
+    --green-value: 0;
+    --blue-value: 255;
+    --top-position: none;
+    --bottom-position: 125%;
+    --left-margin: -40px;
+}
+
+.tooltiptext--fingerprint::after {
+    --arrow-top-position: 100%;
+    --arrow-bottom-position: none;
+    border-color: var(--white) transparent transparent transparent;
+}
+
+.container__cow:hover .tooltiptext--cow {
+    visibility: visible;
+    color: gold;
+    --red-value: 255;
+    --green-value: 215;
+    --blue-value: 0;
+    --left-margin: 0px;
+}

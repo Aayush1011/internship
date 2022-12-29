@@ -1,0 +1,38 @@
+@keyframes shape {
+    0% {
+        background: lightgreen;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transform: rotate(0);
+    }
+
+    50% {
+        background: lightpink;
+        border-radius: 0;
+        width: 100px;
+        height: 100px;
+        transform: rotate(-1turn);
+    }
+
+    100% {
+        background: lightgreen;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transform: rotate(-1turn);
+    }
+}
+
+div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: lightgreen;
+    margin: 50px auto;
+    animation-name: shape;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}

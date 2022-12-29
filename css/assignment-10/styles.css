@@ -1,0 +1,39 @@
+.circle1 {
+    height: min(10vw, 50px);
+    width: min(10vw, 50px);
+    border-radius: 50%;
+    background: lightseagreen;
+}
+
+.circle2 {
+    height: max(10vw, 50px);
+    width: max(10vw, 50px);
+    border-radius: 50%;
+    background: lightsalmon;
+}
+
+.div1,
+.div2 {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.circle3 {
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    background: lightgoldenrodyellow;
+}
+
+@media only screen and (min-width:768px) {
+    .circle3 {
+        height: 10vw;
+        width: 10vw;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .circle3 {
+        height: 50px;
+        width: 50px;
+    }
+}
