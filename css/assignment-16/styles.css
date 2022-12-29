@@ -80,7 +80,7 @@ body {
     transform: none;
 }
 
-.header__nav__list-items {
+.header__nav__list-items a {
     font-weight: 500;
     font-size: 18px;
     color: var(--dark-gray);
@@ -90,9 +90,9 @@ body {
     color: var(--gold);
 }
 
-.header__nav__list a {
+/* .header__nav__list-items a {
     text-decoration: none;
-}
+} */
 
 .hero {
     width: 100%;
@@ -272,6 +272,7 @@ body {
         font-size: 16px;
         font-weight: 400;
         color: var(--dark-gray);
+        margin-top: 10px;
     }
 
     .hero {
@@ -380,6 +381,7 @@ body {
         font-size: 16px;
         font-weight: 400;
         color: var(--dark-gray);
+        margin-top: 10px;
     }
 
     .hero {
