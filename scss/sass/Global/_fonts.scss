@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import "../Base/global-vars";
+@import "../Base/margin-zero";
+
+html {
+  font-size: 100%;
+}
+
+$font-specs: (
+  "H1" 1.725em 700 120% $black,
+  "H2" 1.2em 700 180% $black,
+  "body-1" 1em 400 100% $black,
+  "body-1--bold" 1em 700 100% $army-green,
+  "body-2" 0.875em 400 180% $black
+);
+
+$styleguide-font-specs: (
+  "h1" 100px 600 100px $pure-black,
+  "h2" 40px 400 40px $pure-black,
+  "body-1" 20px 400 20px $pure-black,
+  "body-2" 14px 400 14px $gray
+);
+
+@each $name, $size, $weight, $line-ht, $color in $font-specs {
+  .#{$name} {
+    font-family: "Poppins", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-ht;
+    color: $color;
+    @extend .margin-zero;
+  }
+}
+
+@each $name, $size, $weight, $line-ht, $color in $styleguide-font-specs {
+  .styleguide-#{$name} {
+    font-family: "Poppins", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-ht;
+    color: $color;
+    @extend .margin-zero;
+  }
+}

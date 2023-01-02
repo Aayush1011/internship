@@ -1,0 +1,13 @@
+@mixin generic-button(
+  $color,
+  $bg-color,
+  $border-radius,
+  $pad-top-bottom,
+  $pad-left-right
+) {
+  color: $color;
+  background: $bg-color;
+  border-radius: $border-radius;
+  padding: $pad-top-bottom $pad-left-right;
+  border: none;
+}

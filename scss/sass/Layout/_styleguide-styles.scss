@@ -1,0 +1,139 @@
+@import "../Global/fonts";
+@import "../Mixins/flex";
+@import "../Base/margin-zero";
+@import "../Base/global-vars";
+
+.button {
+  box-sizing: border-box;
+  width: 150px;
+  height: 80px;
+  border: none;
+  border-radius: 50px;
+}
+
+.hr {
+  width: 100%;
+  height: 0;
+  opacity: 0.2;
+  border: 1px solid $black;
+}
+
+.flex-container {
+  @include flex(column, 80px, 100px);
+}
+
+.typography {
+  @include flex(column, 0, 60px);
+  order: 1;
+
+  &__content {
+    @include flex(column, 0, 40px);
+  }
+
+  &__font {
+    @include flex(row-reverse, 0, 100px);
+
+    &__about {
+      @include flex(column, 0, 8px);
+
+      &__info {
+        @include flex(column, 0, 4px);
+      }
+    }
+  }
+}
+
+.color {
+  @include flex(column, 0, 60px);
+  order: 3;
+
+  &__content {
+    @include flex(row, 0, 40px);
+  }
+
+  &__section {
+    @include flex(column, 0, 12px);
+
+    &__button {
+      &--white {
+        @extend .button;
+        border: 1px solid $black;
+        background: $white;
+      }
+
+      &--black {
+        @extend .button;
+        background: $black;
+      }
+
+      &--army-green {
+        @extend .button;
+        background: $army-green;
+      }
+
+      &--light-green {
+        @extend .button;
+        background: $light-green;
+      }
+    }
+
+    &__info {
+      @include flex(column, 0, 8px);
+      padding-left: 8px;
+    }
+  }
+}
+
+.icons {
+  @include flex(column, 0, 60px);
+  order: 5;
+
+  &__figure {
+    @extend .margin-zero;
+    @include flex(row, 8px, 20px);
+
+    &__location {
+      background-image: url("../../assets/location-icon.svg");
+      width: 44px;
+      height: 44px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.effects {
+  @include flex(column, 0, 60px);
+  order: 7;
+
+  &__content {
+    @include flex(column, 0, 12px);
+
+    &__button {
+      @extend .button;
+      box-shadow: 1px 2px 12px 1px rgba(0, 0, 0, 0.25);
+    }
+
+    &__info {
+      @include flex(column, 0, 8px);
+      padding-left: 8px;
+    }
+  }
+}
+
+.horizontal-line {
+  &--1 {
+    order: 2;
+    @extend .hr;
+  }
+
+  &--2 {
+    order: 4;
+    @extend .hr;
+  }
+
+  &--3 {
+    order: 6;
+    @extend .hr;
+  }
+}

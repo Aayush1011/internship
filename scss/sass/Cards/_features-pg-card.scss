@@ -1,0 +1,25 @@
+@import "../Base/global-vars";
+@import "../Base/margin-zero";
+@import "../Mixins/button";
+
+.features-pg-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  &__header__feature-icon {
+    @extend .margin-zero;
+  }
+
+  &__footer__button {
+    @include generic-button($white, $light-green, 15px, 10px, 15px);
+
+    &:hover {
+      @include generic-button($white, $black, 15px, 10px, 15px);
+    }
+
+    &__body-1 {
+      color: $white;
+    }
+  }
+}

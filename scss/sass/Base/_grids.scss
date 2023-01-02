@@ -1,0 +1,25 @@
+@import "../Mixins/grid-sizes";
+@import "../Mixins/index-pg-cards-mobile";
+
+.grid-container-index {
+  @include grid-sizes(3, 3, 2.5em, 1.875em);
+  padding: 1.25em;
+  @media only screen and (max-width: 475px) {
+    @include grid-sizes(7, 1, 1.25em, 0);
+    width: 100%;
+    padding: 20px;
+  }
+  @include index-pg-cards-mobile;
+}
+
+.grid-container-features {
+  @include grid-sizes(1, 3, 0, 1.25em);
+  padding: 1.25em;
+  width: 80%;
+  margin: 0 auto;
+  @media only screen and (max-width: 475px) {
+    @include grid-sizes(3, 1, 1.25em, 0);
+    width: 100%;
+    padding: 20px;
+  }
+}

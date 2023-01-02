@@ -1,0 +1,13 @@
+@import "../Global/fonts";
+@import "../Base/grids";
+@import "../Cards/index-pg-card";
+
+.container {
+  width: 50%;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  grid-area: 1/1/1 / span 3;
+}
