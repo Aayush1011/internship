@@ -11,6 +11,10 @@
     --whitish: #FFFDFA;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container * {
     box-sizing: border-box;
 }
@@ -259,27 +263,16 @@ body {
     color: var(--whitish-gray);
 }
 
-.go-to-top-checkbox {
-    opacity: 0;
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    top: 117vh;
-    z-index: 8;
-    left: 87%;
-}
-
 .go-to-top {
     height: 50px;
     width: 50px;
     background: var(--orange);
     border: none;
-    position: relative;
+    position: fixed;
     z-index: 7;
-    left: 87%;
-    bottom: 13px;
+    left: 83%;
+    top: 90vh;
 }
-
 
 @media only screen and (min-width: 500px) and (max-width: 768px) {
     .container {
