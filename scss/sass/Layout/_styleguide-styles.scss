@@ -11,13 +11,6 @@
   border-radius: 50px;
 }
 
-.hr {
-  width: 100%;
-  height: 0;
-  opacity: 0.2;
-  border: 1px solid $black;
-}
-
 .flex-container {
   @include flex(column, 80px, 100px);
 }
@@ -55,24 +48,25 @@
     @include flex(column, 0, 12px);
 
     &__button {
+      box-sizing: border-box;
+      width: 150px;
+      height: 80px;
+      border: none;
+      border-radius: 50px;
       &--white {
-        @extend .button;
         border: 1px solid $black;
         background: $white;
       }
 
       &--black {
-        @extend .button;
         background: $black;
       }
 
       &--army-green {
-        @extend .button;
         background: $army-green;
       }
 
       &--light-green {
-        @extend .button;
         background: $light-green;
       }
     }
@@ -93,7 +87,7 @@
     @include flex(row, 8px, 20px);
 
     &__location {
-      background-image: url("../assets/location-icon.svg");
+      background-image: url("../../assets/location-icon.svg");
       width: 44px;
       height: 44px;
       background-size: cover;
@@ -122,18 +116,19 @@
 }
 
 .horizontal-line {
+  width: 100%;
+  height: 0;
+  opacity: 0.2;
+  border: 1px solid $black;
   &--1 {
     order: 2;
-    @extend .hr;
   }
 
   &--2 {
     order: 4;
-    @extend .hr;
   }
 
   &--3 {
     order: 6;
-    @extend .hr;
   }
 }
