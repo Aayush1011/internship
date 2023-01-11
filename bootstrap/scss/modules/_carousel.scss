@@ -1,0 +1,47 @@
+.carousel-image {
+  background: url("./images/Hero Banner.png");
+  background-size: contain;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item img {
+  filter: brightness(60%);
+}
+
+.carousel-caption {
+  top: 60%;
+  transform: translateY(-100%);
+  bottom: initial;
+  opacity: 1;
+}
+
+.carousel-caption h1 {
+  font-size: 5.1rem;
+  font-weight: 700;
+  line-height: 6.12rem;
+}
+
+.carousel-caption p {
+  margin-top: 65px;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 3.84rem;
+}
+
+.carousel-indicators {
+  bottom: 20px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 4;
+  margin-left: 21px;
+  margin-right: 21px;
+
+  &.active {
+    background-color: #dd7777;
+  }
+}

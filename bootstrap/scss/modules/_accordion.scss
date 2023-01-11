@@ -1,0 +1,38 @@
+@import "../base/global-vars";
+
+.accordion {
+  --bs-accordion-bg: $beige-mid;
+  --bs-accordion-border-color: $beige-dark;
+}
+
+.accordion h2 {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+.accordion-body {
+  font-weight: 300;
+  font-size: 1.7rem;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+
+.accordion-item {
+  border: var(--bs-accordion-border-width) solid $beige-dark;
+}
+
+.accordion-button {
+  &::after {
+    background-image: url("../images/Plus.svg");
+  }
+
+  &:not(.collapsed) {
+    background-color: $beige-mid;
+    color: #212529;
+
+    &::after {
+      background-image: url("../images/Minus.svg");
+    }
+  }
+}

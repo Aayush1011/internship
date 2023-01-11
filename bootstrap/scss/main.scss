@@ -1,0 +1,31 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1328px,
+) !default;
+
+$container-padding-x: 0 !default;
+
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "415x311": calc(311 / 415 * 100%),
+  "462x311": calc(311 / 462 * 100%),
+  "36x140": calc(140 / 36 * 100%),
+  "110x426": calc(426 / 110 * 100%),
+  "522x1328": calc(1328 / 522 * 100),
+  "997x1440": calc(1440 / 997 * 100%),
+) !default;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./global/global";
+@import "./global/fonts";
+@import "./modules/accordion";
+@import "./cards/cards";
+@import "./modules/carousel";
+@import "./modules/navbar";
+@import "./modules/footer";

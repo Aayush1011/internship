@@ -39,6 +39,7 @@ body {
     background: var(--white);
     justify-content: space-between;
     transition: all 0.5s linear;
+    overflow: hidden;
 }
 
 .card--basic {

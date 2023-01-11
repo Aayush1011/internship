@@ -1,0 +1,71 @@
+@import "../base/global-vars";
+
+.card {
+  border: none;
+  --bs-card-bg: $beige-dark;
+  //   padding-left: 0;
+  //   padding-right: 0;
+}
+
+.card-img-top {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 2.04rem;
+  margin-inline: 0;
+  padding-left: 0;
+}
+
+.card-text {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.56rem;
+  margin-inline: 0;
+  padding-left: 0;
+}
+
+// .card__inner {
+//   background-image: url("./images/Image.png");
+//   background-size: contain;
+// }
+
+.card-img-overlay {
+  position: absolute;
+
+  .card-title {
+    font-family: "Super GT DS Card Title";
+    font-size: 8rem;
+    font-weight: 300;
+    line-height: 95%;
+    color: $white;
+    text-align: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+
+    span {
+      font-family: "GT Super DS Card Title Italic";
+    }
+  }
+
+  .card-text {
+    color: $white;
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 120%;
+  }
+
+  .btn {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 110%;
+    position: relative;
+    bottom: -100px;
+    // @media only screen and (max-width: 768px) {
+    //   bottom: -50px;
+    // }
+  }
+}

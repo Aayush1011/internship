@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  font-size: 10px;
+}
+
+@font-face {
+  font-family: "GT Super DS Card Title";
+  src: url("../../../Grilli-Type-Trial-Fonts-2022-10/Web/GT-Super/GT-Super-Text-Book.woff2");
+}
+
+@font-face {
+  font-family: "GT Super DS Card Title Italic";
+  src: url("../../../Grilli-Type-Trial-Fonts-2022-10/Web/GT-Super/GT-Super-Text-Book-Italic.woff2");
+}
+
+@font-face {
+  font-family: "GT Super DS Header";
+  src: url("../../../Grilli-Type-Trial-Fonts-2022-10/Web/GT-Super/GT-Super-Display-Bold-Italic.woff2");
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:is(.our-values, .faqs) h1 {
+  font-family: "GT Super DS Header";
+  font-style: italic;
+  font-weight: 500;
+  font-size: 6.4rem;
+  line-height: 95%;
+  margin: 50px 0;
+}

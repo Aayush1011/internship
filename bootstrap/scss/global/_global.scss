@@ -1,0 +1,11 @@
+@import "./fonts";
+@import "../base/global-vars";
+
+body {
+  background: $beige-mid;
+}
+
+figure {
+  margin-block: 0;
+  margin-inline: 0;
+}

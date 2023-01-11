@@ -1,0 +1,48 @@
+@import "../base/global-vars";
+
+.footer {
+  background: $off-black;
+  color: $white;
+
+  .container {
+    margin-top: 56px;
+    margin-bottom: 56px;
+
+    ul {
+      list-style-type: none;
+      margin-top: 11.7rem;
+      padding-left: 0;
+
+      li {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 120%;
+        margin: 10px 0;
+      }
+    }
+
+    .div-title {
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 120%;
+    }
+
+    .div-desc {
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 120%;
+      text-decoration: underline;
+      text-decoration-color: $crozier-orange;
+    }
+  }
+
+  &__bottom {
+    opacity: 0.4;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 120%;
+    }
+  }
+}
