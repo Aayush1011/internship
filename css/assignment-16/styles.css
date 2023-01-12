@@ -445,6 +445,7 @@ body {
     .hero__section {
         display: flex;
         justify-content: space-between;
+        column-gap: 30px;
     }
 
     .hero__info {
@@ -499,7 +500,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        row-gap: 30px;
+        column-gap: 30px;
     }
 
     .feature__1 {
@@ -516,10 +517,6 @@ body {
 
     .feature__info__title {
         line-height: normal;
-    }
-
-    .go-to-top-checkbox {
-        display: none;
     }
 
     .go-to-top {
