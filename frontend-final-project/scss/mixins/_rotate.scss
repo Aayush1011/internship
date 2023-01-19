@@ -1,5 +1,0 @@
-// Rotate
-// eg: @include rotate(45deg);
-@mixin rotate($degrees) {
-    transform: rotate($degrees);
-}
