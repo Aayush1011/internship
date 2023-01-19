@@ -1,4 +1,7 @@
 .blog-article-section {
+    li {
+        list-style-type: disc;
+    }
     &__img-container {
         &--box-shadow {
             @include media-breakpoint-up(md) {
