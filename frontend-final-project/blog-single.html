@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('includes/head.html',{'pageTitle':'Blog Single'})
+</head>
+
+<body>
+    <div class="theme-app d-flex flex-column">
+        <div class="theme-wrap position-relative">
+            @@include('includes/header.html')
+            <main class="theme-main">
+                @@include('includes/modules/section/leadspace-02.html', {
+                'section-bg-color': "mint",
+                'hero-img': 'image 1.png',
+                'caption-bg': 'primary',
+                'img-caption-font-color': 'white',
+                'hero-img-caption': 'Interesting Facts I Bet You Never Knew About BLOGS',
+                'desc-none': 'none',
+                })
+
+                @@include('includes/modules/section/blog-article-section.html')
+
+                @@include('includes/modules/section/blog-single-card-section.html', {
+                'section-bg': 'blush',
+                'section-eyebrow': 'Related Blogs',
+                'blogCards': {
+                'blogCardsList': [
+                {
+                'mobile-margin-bottom': '6',
+                'tablet-margin-bottom': '0',
+                'imgName': 'image 1.png',
+                'date': 'June 11, 2021',
+                'blog-desc': 'Interesting Facts I Bet You Never Knew About BLOGS'
+                },
+                {
+                'mobile-margin-bottom': '6',
+                'tablet-margin-bottom': '0',
+                'imgName': 'image 1-1.png',
+                'date': 'June 11, 2021',
+                'blog-desc': 'verything You Wanted to Know About BLOGS and Were Too EEmbarrassed to Ask'
+                },
+                {
+                'md-none': 'none',
+                'xl-block': 'block',
+                'mobile-margin-bottom': '6',
+                'tablet-margin-bottom': '0',
+                'imgName': 'image 1-2.png',
+                'date': 'June 11, 2021',
+                'blog-desc': 'What Can You Do To Save Your BLOGS From Destruction By Social Media?'
+                },
+                ]
+                }
+                })
+            </main>
+        </div>
+        @@include('includes/footer.html')
+        @@include('includes/scripts.html')
+    </div>
+</body>
+
+</html>

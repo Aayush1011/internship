@@ -1,0 +1,109 @@
+.blog-grid {
+    .li {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .input {
+        &__section {
+            &__field {
+                border-radius: 3rem;
+                width: 100%;
+                @include media-breakpoint-between(md, xl) {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        &-toggle {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: Inter, sans-serif;
+            background: transparent;
+            border: none;
+            text-transform: uppercase;
+        }
+        .btn {
+            &:hover {
+                background: transparent;
+                border: none;
+            }
+            &.show {
+                background: transparent;
+                border: none;
+            }
+        }
+        &-menu {
+            font-size: 18px;
+            font-weight: 600;
+            @include media-breakpoint-down(md) {
+                margin-left: -2.4rem !important;
+                margin-right: -2.4rem !important;
+            }
+            &.show {
+                @include media-breakpoint-down(md) {
+                    transform: none !important;
+                    position: relative !important;
+                }
+            }
+            li {
+                margin-bottom: 0;
+            }
+        }
+
+        &-item {
+            .h6 {
+                border-bottom: 1px solid $black;
+                margin-bottom: 0;
+            }
+            &:focus {
+                background-color: $mint;
+            }
+        }
+        li {
+            &:last-of-type {
+                .h6 {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .grid {
+        &__changer {
+            &__inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &__arrow {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    background-color: $black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                }
+            }
+        }
+        &__pages {
+            display: flex;
+            &__page {
+                margin-left: 0.8rem;
+                margin-right: 0.8rem;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                font-weight: 500;
+                letter-spacing: 0.2em;
+                color: $black;
+                &:first-child {
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

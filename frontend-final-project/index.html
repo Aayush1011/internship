@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('includes/head.html',{'pageTitle':'Home'})
+</head>
+
+<body>
+    <div class="theme-app d-flex flex-column">
+        <div class="theme-wrap position-relative">
+            @@include('includes/header.html')
+            <main class="theme-main">
+                @@include('includes/modules/section/leadspace-01.html', {
+                'section-bg': 'blush',
+                'left-img': 'DSC_0300 4.png',
+                'right-img': 'home-lead-right.jpg',
+                'size-left': 'small',
+                'size-right': 'big',
+                'img-left-xl-margin': '16',
+                'aspect-ratio-left': '327x233',
+                'aspect-ratio-right': '16x9',
+                'bg-color': 'white',
+                'h2-heading': 'Look deep into nature, and then you will understand everything better.',
+                'h3-heading': '',
+                'justify-img': 'start',
+                'para': 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots\
+                in piece of classical Latin literature from 45 BC, making it over 2000 years old.',
+                'font-border-color': 'space',
+                'b-width': '2',
+                'card-border-width': '8',
+                'border-color': 'primary',
+                'img-src': 'DSC_0300 3.png',
+                'small-screen-padding-x': '6',
+                'small-screen-padding-y': '6',
+                'tablet-padding-x': '10',
+                'tablet-padding-y': '10',
+                'border-location': 'top',
+                'desktop-padding-x': '20',
+                'desktop-padding-y': '20',
+                'btn-color': 'transparent',
+                'btn-text': 'Contact us',
+                'xl-size': '8',
+                'button-none': 'none',
+                'block': 'block',
+                'hover': 'hover'
+                })
+                
+                @@include('includes/modules/section/mainpage-section.html', {
+                'picture-portion': 'none',
+                'video-aspect-ratio': '279x238',
+                'stat': 'About Us',
+                'title-none': 'none',
+                'date-none': 'none',
+                'video-margin-bottom': '10',
+                'text': 'Integer at neque ac metus fringilla dapibus et eu eros. Vivamus vitae finibus \
+                dolor. Suspendisse finibus ante in sapien fermentum, quis condimentum turpis consequat.',
+                'small-text-none': 'none',
+                'margin-bottom': '10',
+                'btn-text': 'Learn more',
+                'btn-color': 'primary',
+                'btn-font-color': 'white',
+                'btn-border-width': '0',
+                'hover': 'hover1'
+                })
+                
+                @@include('includes/modules/section/mainpage-section.html', {
+                'section-bg-color': 'mint',
+                'image-name': 'DSC_0300 1-2.png',
+                'aspect-ratio': '318x267',
+                'section-name': 'things-to-remember',
+                'video-portion': 'none',
+                'stat': 'Things to remember',
+                'image-margin-bottom': '10',
+                'title': 'To People That Want To Start BLOGS But Are Afraid To Get Started',
+                'date': 'Nov 11, 2021',
+                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut porta diam.\
+                Nullam sed dolor in libero auctor gravida. Morbi eget nibh vel ligula consequat\
+                ultrices. Donec maximus dui sapien, ut ullamcorper nisi dignissim quis.',
+                'small-text-none': 'none',
+                'margin-bottom': '6',
+                'btn-text': 'More articles',
+                'btn-color': 'transparent',
+                'btn-font-color': 'space',
+                'btn-border-width': '2',
+                'btn-border-color': 'space',
+                'hover': 'hover'
+                })
+
+                @@include('includes/modules/section/carousel.html')
+
+                @@include('includes/modules/section/mainpage-section.html', {
+                'image-name': 'Photos.png',
+                'aspect-ratio': '327x334',
+                'section-name': 'blogs',
+                'image-margin-bottom': '10',
+                'video-portion': 'none',
+                'stat': 'Blogs',
+                'title': 'Proin pretium risus suscipit viverra mattis. Aliquam non nunc ligula',
+                'date-none': 'none',
+                'text': "There are many variations of passages of Lorem Ipsum available, but the majority\
+                have suffered alteration in some form, by injected humour, or randomised words which dont \
+                look even slightly believable.",
+                'small-text': "If you are going to use a passage of Lorem Ipsum, you need to be sure there\
+                isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators\
+                on the Internet tend to repeat predefined chunks as necessary, making this the first\
+                true generator on the Internet.",
+                'margin-bottom': '10',
+                'btn-text': 'Learn more',
+                'btn-color': 'primary',
+                'btn-font-color': 'white',
+                'btn-border-width': '0',
+                'hover': 'hover1'
+                })
+                
+                @@include('includes/modules/section/mainpage-section.html', {
+                'section-bg-color': 'mint',
+                'image-name': 'DSC_0300 1-1.png',
+                'aspect-ratio': '320x269',
+                'section-name': 'things-to-remember',
+                'image-margin-bottom': '10',
+                'video-portion': 'none',
+                'stat': 'More info',
+                'title': 'Proin pretium risus suscipit viverra mattis. Aliquam non nunc ligula',
+                'date': 'Nov 11, 2021',
+                'text': "There are many variations of passages of Lorem Ipsum available, but the\
+                majority have suffered alteration in some form, by injected humour, or randomised\
+                words which dont look even slightly believable.",
+                'small-text-none': 'none',
+                'margin-bottom': '6',
+                'btn-text': 'More articles',
+                'btn-color': 'transparent',
+                'btn-font-color': 'space',
+                'btn-border-width': '2',
+                'btn-border-color': 'space',
+                'hover': 'hover'
+                })
+
+                @@include('includes/modules/section/testimonial.html')
+
+                @@include("includes/modules/section/see-our-blogs.html", {
+                'section-bg': 'blush',
+                'bg-color': 'transparent',
+                'h3-heading': 'Proin pretium risus suscipit viverra mattis. Aliquam non nunc ligula.',
+                'h2-heading': '',
+                'para': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut porta diam.',
+                'font-border-color': 'white',
+                'b-width': '0',
+                'border-color': 'primary',
+                'small-screen-padding-y': '10',
+                'tablet-padding-y': '20',
+                'desktop-padding-y': '20',
+                'heading-class': 'h3',
+                'btn-color': 'primary',
+                'card-border-width': '0',
+                'btn-text': 'See Our Blogs',
+                'hover': 'hover1'
+                })
+            </main>
+        </div>
+        @@include('includes/footer.html')
+        @@include('includes/scripts.html')
+    </div>
+</body>
+
+</html>

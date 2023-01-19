@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('includes/head.html',{'pageTitle':'About Us'})
+</head>
+
+<body>
+    <div class="theme-app d-flex flex-column">
+        <div class="theme-wrap position-relative">
+            @@include('includes/header.html'})
+            <main class="theme-main">
+                @@include('includes/modules/section/leadspace-01.html', {
+                'section-bg' :'mint',
+                'left-img': 'Rectangle 43.jpg',
+                'right-img': 'Rectangle 44.jpg',
+                'aspect-ratio-left': '327x248',
+                'aspect-ratio-right': '354x265',
+                'size-left': 'biggest',
+                'justify-img': 'end',
+                'size-right': 'bigger',
+                'bg-color': 'primary',
+                'reverse': 'reverse',
+                'heading-and-para-color': 'white',
+                'h2-heading': 'Integer at neque ac metus fringilla dapibus et eu eros.',
+                'h3-heading': '',
+                'date-eyebrow': '',
+                'para': 'Aliquam egestas sapien turpis, eu iaculis velit pulvinar vel. Cras at diam quis turpis\
+                tincidunt condimentum eget nec quam.',
+                'font-border-color': 'white',
+                'b-width': '2',
+                'card-border-width': '8',
+                'border-color': 'space',
+                'img-src': 'Rectangle 45.png',
+                'block': 'block',
+                'small-screen-padding-x': '6',
+                'small-screen-padding-y': '6',
+                'tablet-padding-x': '10',
+                'tablet-padding-y': '10',
+                'border-location': 'top',
+                'desktop-padding-x': '20',
+                'desktop-padding-y': '20',
+                'btn-color': 'transparent',
+                'btn-text': 'Contact us',
+                'xl-size': '8',
+                'button-none': 'none'
+                })
+                @@include('includes/modules/section/services.html')
+            </main>
+        </div>
+        @@include('includes/footer.html')
+        @@include('includes/scripts.html')
+    </div>
+</body>
+
+</html>

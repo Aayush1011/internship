@@ -1,0 +1,53 @@
+.service-point-card {
+    &__img-container {
+        @include media-breakpoint-up(md) {
+            max-width: 95.763%;
+            position: relative;
+            z-index: 1;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 96.875%;
+        }
+        &__image {
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__link {
+        @include media-breakpoint-up(md) {
+            position: relative;
+            z-index: 2;
+            margin-top: -15.5rem;
+        }
+        @include media-breakpoint-up(xl) {
+            margin-top: -15.5rem;
+        }
+        &__inner {
+            @include media-breakpoint-down(md) {
+                max-width: 100%;
+            }
+        }
+        &__arrow-icon {
+            font-size: 5.5rem;
+            width: 6rem;
+            height: 6rem;
+            @include media-breakpoint-up(md) {
+                font-size: 9.5rem;
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    }
+}
+
+.ratio-327x230::before {
+    @include media-breakpoint-up(md) {
+        --bs-aspect-ratio: 53.08%;
+    }
+    @include media-breakpoint-up(xl) {
+        max-width: 96.875%;
+        --bs-aspect-ratio: 38.71%;
+    }
+}

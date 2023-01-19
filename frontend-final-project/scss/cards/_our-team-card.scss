@@ -1,0 +1,10 @@
+.our-team-card {
+    &__picture {
+        @include media-breakpoint-between(md, xl) {
+            --bs-aspect-ratio: 80.72%;
+        }
+        img {
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.button {
+    &__hover {
+        &:hover {
+            border-color: $teal !important;
+            color: $teal !important;
+            i {
+                color: $teal !important;   
+            }
+        }
+    }
+    &__hover1 {
+        &:hover {
+            background-color: $teal !important;
+        }
+    }
+}

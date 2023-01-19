@@ -1,0 +1,35 @@
+.leadspace-02 {
+    &__img {
+        &__container {
+            @include media-breakpoint-up(md) {
+                position: relative;
+                z-index: 1;
+            }
+            &__image {
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+        &__caption {
+            @include media-breakpoint-up(md) {
+                position: relative;
+                z-index: 2;
+                // transform: translateY(-100%);
+                margin-top: -10.4rem;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-top: -20.4rem;
+            }
+        }
+    }
+
+    &__desc {
+        box-shadow: 8px 8px 0px $light-mint;
+    }
+    .ratio-327x245::before {
+        @include media-breakpoint-up(md) {
+            --bs-aspect-ratio: 56.25%;
+        }
+    }
+}
