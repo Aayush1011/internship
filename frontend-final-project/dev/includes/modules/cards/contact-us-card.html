@@ -1,0 +1,28 @@
+<article class="contact-us row flex-row-@@reverse">
+    <div class="contact-us__info col-md-12 col-xl-@@xl-size">
+        <div
+            class="bg-@@bg-color border-@@border-location border-@@card-border-width border-@@border-color px-@@small-screen-padding-x py-@@small-screen-padding-y px-md-@@tablet-padding-x py-md-@@tablet-padding-y px-xl--@@desktop-padding-x py-xl-@@desktop-padding-y">
+            <!-- <div class="my-10 m-md-10"> -->
+            <div>
+                <h2 class="h2 mb-4 text-@@heading-and-para-color">@@h2-heading</h2>
+                <h3 class="h3 mb-4">@@h3-heading</h3>
+                <p class="body-xl mb-6 mb-xl-10 text-@@heading-and-para-color">@@para</p>
+                <div class="d-@@button-none d-md-block">
+                    @@include('../button.html', {
+                    'btn-color': '@@btn-color',
+                    'font-color': '@@font-border-color',
+                    'border-color': '@@font-border-color',
+                    'border-width': '@@b-width',
+                    'text': '@@btn-text',
+                    'hover': '@@hover',
+                    })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-xl-@@block col-xl-4 d-flex justify-content-@@justify-img">
+        <figure class="contact-us__img ratio ratio-1x1">
+            <img src="./images/@@img-src" alt="contact-us-image">
+        </figure>
+    </div>
+</article>

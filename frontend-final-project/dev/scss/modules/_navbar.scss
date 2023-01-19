@@ -1,0 +1,41 @@
+@import '../variables';
+
+.navbar {
+    &__image {
+        img {
+            // background-image: url('../../images/logo-dark.svg');
+            // background-size: contain;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            width: 271.62px;
+            height: 124px;
+            @include media-breakpoint-down(md) {
+                width: 205.33px;
+                height: 70px;
+            }
+        }
+    }
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+// .offcanvas-body {
+//     @include media-breakpoint-up(xl) {
+//         justify-content: space-between;
+//     }
+//     .navbar-nav .nav-item a {
+//         color: $space;
+//         font-weight: 600;
+//     }
+// }
+
+// @include media-breakpoint-down(md) {
+//     .offcanvas {
+//         &-body .navbar-nav .nav-item a {
+//             background: $teal;
+//             color: $white;
+//         }
+//     }
+// }

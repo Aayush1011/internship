@@ -1,0 +1,18 @@
+.leadspace-01 + .mainpage-section .mainpage-section__inner {
+    flex-direction: row-reverse;
+    @include media-breakpoint-down(md) {
+        flex-direction: column-reverse;
+    }
+}
+
+.carousel + .mainpage-section .mainpage-section__inner {
+    flex-direction: row-reverse;
+}
+
+.mainpage-section:nth-child(3) .mainpage-section__inner .mainpage-section__inner__image {
+    filter: drop-shadow(8px 8px 0px #f5cebe);
+}
+
+.mainpage-section:nth-child(6) .mainpage-section__inner .mainpage-section__inner__image {
+    filter: drop-shadow(8px 8px 0px #f5cebe);
+}

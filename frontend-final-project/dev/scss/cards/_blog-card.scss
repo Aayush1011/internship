@@ -1,0 +1,17 @@
+.blog-card {
+    &__box-shadow {
+        box-shadow: 8px 8px 0px $blush;
+    }
+    &--hover-shadow {
+        background: $white;
+        &:hover {
+            background: $blush;
+            box-shadow: 8px 8px 0px $peach;
+        }
+    }
+    &__img-container {
+        img {
+            object-fit: cover;
+        }
+    }
+}

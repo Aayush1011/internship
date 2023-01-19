@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('includes/head.html',{'pageTitle':'Home'})
+</head>
+
+<body>
+    <div class="theme-app d-flex flex-column">
+        <div class="theme-wrap position-relative">
+            @@include('includes/header.html')
+            <main class="theme-main">
+                @@include('includes/modules/section/leadspace-03.html', {
+                    'section-bg': 'mint',
+                    'img-name': 'contact-us-img.jpg',
+                    'caption-title': 'Contact Us',
+                    'caption-desc': 'Ut posuere ullamcorper euismod. Donec a justo pulvinar diam dictum lobortis vulputate non nisi. Vestibulum pellentesque eget lorem ultrices lobortis.',
+                })
+                @@include('includes/modules/section/contact-form.html', {
+                    'section-bg': 'mint',
+                })
+            </main>
+        </div>
+        @@include('includes/footer.html')
+        @@include('includes/scripts.html')
+    </div>
+</body>
+
+</html>

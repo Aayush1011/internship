@@ -1,0 +1,16 @@
+.offcanvas-body {
+    .navbar-nav .nav-item a {
+        color: $space;
+        font-weight: 600;
+    }
+    @include media-breakpoint-down(xl) {
+        padding-top: 20rem;
+        background: $teal;
+        .navbar-nav .nav-item a {
+            color: $white;
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        justify-content: space-between;
+    }
+}
