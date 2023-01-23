@@ -3,12 +3,6 @@
         box-shadow: 8px 8px 0px $light-mint;
     }
 
-    &__max-width {
-        width: 100%;
-        @include media-breakpoint-up(md) {
-            width: 40rem;
-        }
-    }
     &__input {
         &--select {
             // max-height: 6rem;
@@ -43,8 +37,11 @@
         }
 
         &-select {
-            height: 6rem;
-            width: 40rem;
+            width: 100%;
+            @include media-breakpoint-up(md) {
+                height: 6rem;
+                width: 40rem;
+            }
         }
     }
     .form-label {
