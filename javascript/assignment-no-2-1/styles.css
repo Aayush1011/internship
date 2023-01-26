@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2rem 3.2rem;
+    margin: 10vh auto;
+    border-radius: 0.5rem;
+    background: #6565af;
+    width: 70%;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+}
+
+.outer-div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.input-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.6rem;
+    background: #a8a8f4;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.input-div:first-child {
+    width: 100%;
+    display: block;
+}
+
+.input-div:first-child label {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.input-div:first-child output {
+    margin-left: 0.8rem;
+}
+
+.pwd-gen-btn {
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    background: #af6573;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.pwd-div {
+    display: none;
+    margin-top: 1.8rem;
+    padding: 1.6rem;
+    flex-direction: column;
+    row-gap: 1rem;
+    background: #a8a8f4;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+}
+
+.single-pwd-div {
+    text-align: center;
+    border-radius: 0.5rem;
+    background: #6565af;
+    padding: 0.8rem 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 25%;
+    }
+}
