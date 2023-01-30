@@ -15,5 +15,5 @@ html {
 
 .box {
     position: relative;
-    transition: all .5s linear;
+    transition: all .1s linear;
 }

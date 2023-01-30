@@ -1,14 +1,10 @@
 //setting constants
-const MINIMUM_CONTAINER_WIDTH = 500;
-const MAXIMUM_CONTAINER_WIDTH = 1000;
-const MINIMUM_CONTAINER_HEIGHT = 500;
-const MAXIMUM_CONTAINER_HEIGHT = 1000;
+const CONTAINER_WIDTH = 500;
+const CONTAINER_HEIGHT = 500;
 const CONTAINER_BACKGROUND = "#15A0EA";
 const NUMBER_OF_BOXES = 4;
-const MINIMUM_BOX_WIDTH = 10;
-const MAXIMUM_BOX_WIDTH = 50;
-const MINIMUM_BOX_HEIGHT = 10;
-const MAXIMUM_BOX_HEIGHT = 50;
+const BOX_WIDTH = 50;
+const BOX_HEIGHT = 50;
 const BOX_BACKGROUND = "#EA5F15";
 const ANIMATION_STEP = 10;
 const ANIMATION_INTERVAL = 100;
@@ -19,17 +15,10 @@ const ANIMATION_INTERVAL = 100;
  * @param {Element} container
  */
 function setContainerStyle(container) {
-  container.style.width =
-    Math.floor(
-      Math.random() * (MAXIMUM_CONTAINER_WIDTH - MINIMUM_CONTAINER_WIDTH) +
-        MINIMUM_CONTAINER_WIDTH
-    ) + "px";
-  container.style.height =
-    Math.floor(
-      Math.random() * (MAXIMUM_CONTAINER_HEIGHT - MINIMUM_CONTAINER_HEIGHT) +
-        MINIMUM_CONTAINER_HEIGHT
-    ) + "px";
+  container.style.width = CONTAINER_WIDTH + "px"
+  container.style.height = CONTAINER_HEIGHT + "px"
   container.style.background = CONTAINER_BACKGROUND;
+  container.style.position = "relative";
 }
 
 /**
@@ -64,16 +53,8 @@ function initializeBoxes(parent) {
   for (let i = 0; i < NUMBER_OF_BOXES; i++) {
     let box = document.createElement("div");
     box.classList.add("box", `box${i}`);
-    box.style.width =
-      Math.floor(
-        Math.random() * (MAXIMUM_BOX_WIDTH - MINIMUM_BOX_WIDTH) +
-          MINIMUM_BOX_WIDTH
-      ) + "px";
-    box.style.height =
-      Math.floor(
-        Math.random() * (MAXIMUM_BOX_HEIGHT - MINIMUM_BOX_HEIGHT) +
-          MINIMUM_BOX_HEIGHT
-      ) + "px";
+    box.style.width = BOX_WIDTH + "px";
+    box.style.height = BOX_HEIGHT + "px";
     box.style.left = "0px";
     box.style.top = "0px";
     box.style.position = "absolute";
@@ -81,19 +62,19 @@ function initializeBoxes(parent) {
     parent.appendChild(box);
 
     //checking so that each starting position of each box is unique
-    const parentWidth = parseInt(parent.style.width, 10);
-    const parentHeight = parseInt(parent.style.height, 10);
     do {
       xPosition =
         Math.abs(
-          Math.floor(Math.random() * (parentWidth - parseInt(box.style.width, 10))) *
-            parentWidth
-        ) / parentWidth;
+          Math.floor(
+            Math.random() * (CONTAINER_WIDTH - BOX_WIDTH)
+          ) * CONTAINER_WIDTH
+        ) / CONTAINER_WIDTH;
       yPosition =
         Math.abs(
-          Math.floor(Math.random() * (parentHeight - parseInt(box.style.height, 10))) *
-            parentHeight
-        ) / parentHeight;
+          Math.floor(
+            Math.random() * (CONTAINER_HEIGHT - BOX_HEIGHT)
+          ) * CONTAINER_HEIGHT
+        ) / CONTAINER_HEIGHT;
     } while (xPosition in xPositions && yPosition in yPositions);
     xPositions.push(xPosition);
     yPositions.push(yPosition);
@@ -130,14 +111,14 @@ function animateBoxes(parent, boxes, boxPosition) {
       //checking for collision with container walls
       if (
         parseInt(box.style.left, 10) >=
-          parseInt(parent.style.width, 10) - parseInt(box.style.width, 10) ||
+          CONTAINER_WIDTH - BOX_WIDTH  ||
         parseInt(box.style.left, 10) <= 0
       ) {
         boxPosition[`box${i}`].xDirection *= -1;
       }
       if (
         parseInt(box.style.top, 10) >=
-          parseInt(parent.style.height, 10) - parseInt(box.style.height, 10) ||
+          CONTAINER_HEIGHT - BOX_HEIGHT ||
         parseInt(box.style.top, 10) <= 0
       ) {
         boxPosition[`box${i}`].yDirection *= -1;
@@ -148,18 +129,19 @@ function animateBoxes(parent, boxes, boxPosition) {
         let remainingBoxName = remainingBox.classList[1];
         if (
           !(
-            parseInt(box.style.left, 10) + parseInt(box.style.width, 10) <
+            parseInt(box.style.left, 10) + BOX_WIDTH <
               parseInt(remainingBox.style.left, 10) ||
             parseInt(box.style.left, 10) >
               parseInt(remainingBox.style.left, 10) +
-                parseInt(remainingBox.style.width, 10) ||
-            parseInt(box.style.top, 10) + parseInt(box.style.height, 10) <
+                BOX_WIDTH ||
+            parseInt(box.style.top, 10) + BOX_HEIGHT <
               parseInt(remainingBox.style.top, 10) ||
             parseInt(box.style.top, 10) >
               parseInt(remainingBox.style.top, 10) +
-                parseInt(remainingBox.style.height, 10)
+                BOX_HEIGHT
           )
         ) {
+          debugger
           boxPosition[`box${i}`].yDirection *= -1;
           boxPosition[`box${i}`].xDirection *= -1;
           boxPosition[remainingBoxName].yDirection *= -1;
