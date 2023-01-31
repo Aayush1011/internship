@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* .canvas { */
+    /* margin: 100px; */
+    /* position: relative; */
+/* } */
+
+/* .box { */
+    /* position: relative; */
+    /* transition: all .1s linear; */
+/* } */
