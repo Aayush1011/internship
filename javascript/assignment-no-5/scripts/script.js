@@ -13,40 +13,61 @@ document.querySelector(".highScore").innerText = highScore;
 let fallSpeed = 3;
 let obstacleGenerateSpeed = 1000;
 let obstacleSet = [10, 110, 210];
-let gotImages = [];
+let gotImages = {};
+let startedGame = false;
 
 canvas.width = screenWidth;
 canvas.height = screenHeight;
-canvas.style.background = "grey";
+// canvas.style.backgroundImage = "assets/road.png";
 
 document.onkeydown = function (e) {
   if (e.key === "ArrowLeft") {
-    if (0 <= car.Position.X) {
-      car.Velocity.X = -5;
+    if (0 >= car.Position.X) {
+      return;
     }
+    car.Velocity.X = -5;
   }
   if (e.key == "ArrowRight") {
-    if (car.Position.X < screenWidth - car.Width) {
-      car.Velocity.X = 5;
+    if (car.Position.X >= screenWidth - car.Width) {
+      return;
     }
+    car.Velocity.X = 5;
   }
 };
 document.onkeyup = function () {
   car.Velocity.X = 0;
 };
 
-let assetsToLoad = ["cartcycle", "ambulance", "foodtruck", "truck"];
+let assetsToLoad = ["road", "cartcycle", "ambulance", "foodtruck", "truck"];
 const assetsLoaded = assetsToLoad.map((assetName) => {
   new Promise((resolve, reject) => {
     const img = new Image();
     img.onerror = () => reject(`${assetName} failed to load`);
     img.onload = () => {
-      gotImages.push(img);
+      gotImages[assetName] = img;
       resolve(img);
     };
     img.src = `assets/${assetName}.png`;
   });
 });
+
+class Background {
+  constructor() {
+    this.Width = 300;
+    this.Height = 700;
+    this.X = 0;
+    this.Y = 0;
+    this.Image = gotImages.road;
+  }
+
+  draw() {
+    ctx.drawImage(this.Image, this.X, this.Y, this.Width, this.Height);
+  }
+
+  update() {
+    this.draw()
+  }
+}
 
 class Obstacle {
   constructor(image, posX, width, height) {
@@ -94,9 +115,9 @@ class Car {
   constructor(posX, width, height) {
     this.Width = width;
     this.Height = height;
-    this.Color = "green";
     this.Position = { X: posX, Y: screenHeight - this.Height - 10 };
     this.Velocity = { X: 0, Y: 0 };
+    this.Image = gotImages.cartcycle;
   }
 
   checkCollisions() {
@@ -112,7 +133,7 @@ class Car {
     }
     for (let i in obstacles) {
       if (collision(this, obstacles[i])) {
-        newGame();
+        displayFrontScreen("Well Played!!!", "Play Again");
       }
     }
   }
@@ -121,7 +142,7 @@ class Car {
   }
   draw() {
     ctx.drawImage(
-      gotImages[0],
+      this.Image,
       this.Position.X,
       this.Position.Y,
       this.Width,
@@ -135,9 +156,12 @@ class Car {
   }
 }
 
-let car = new Car(130, 40, 60);
+let car;
+let background
 
 function newGame() {
+  background = new Background();
+  background.draw();
   car = new Car(130, 40, 60);
   obstacles = {};
   if (score > Number(highScore)) {
@@ -147,9 +171,34 @@ function newGame() {
   }
   score = 0;
   document.querySelector(".score").innerText = score;
+  if (!startedGame) {
+    Promise.all(assetsLoaded).then(() => {
+      setInterval(Updater, 10);
+      setInterval(obstacleGenerate, obstacleGenerateSpeed);
+    });
+  }
 }
+
+function displayFrontScreen(screenText, buttonText) {
+  let startScreenButton = document.querySelector(".start-screen__button");
+  document.querySelector(".canvas").style.display = "none";
+  document.querySelector(".container").style.display = "none";
+  document.querySelector(".start-screen").style.display = "flex";
+  document.querySelector(".start-screen__text").innerText = screenText;
+  startScreenButton.innerText = buttonText;
+  startScreenButton.onclick = () => {
+    document.querySelector(".canvas").style.display = "block";
+    document.querySelector(".container").style.display = "block";
+    document.querySelector(".start-screen").style.display = "none";
+    newGame();
+    if (!startedGame) startedGame = true;
+  };
+}
+
 function obstacleGenerate() {
-  const randomObstacle = Math.floor(Math.random() * 3 + 1);
+  const randomObstacle = ["ambulance", "foodtruck", "truck"][
+    Math.floor(Math.random() * 3)
+  ];
   new Obstacle(
     gotImages[randomObstacle],
     obstacleSet[Math.floor(Math.random() * 3)],
@@ -160,12 +209,13 @@ function obstacleGenerate() {
 
 function Updater() {
   ctx.clearRect(0, 0, screenWidth, screenHeight);
+  background.update();
   for (i in obstacles) {
     obstacles[i].update();
   }
   car.update();
 }
-Promise.all(assetsLoaded).then(() => {
-  setInterval(Updater, 10);
-  setInterval(obstacleGenerate, obstacleGenerateSpeed);
-});
+
+window.onload = () => {
+  displayFrontScreen("Welcome!!!", "Start");
+};
