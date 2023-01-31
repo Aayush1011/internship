@@ -140,7 +140,6 @@ let car = new Car(130, 40, 60);
 function newGame() {
   car = new Car(130, 40, 60);
   obstacles = {};
-  console.log(score, Number(highScore));
   if (score > Number(highScore)) {
     localStorage.setItem("highScore", score);
     highScore = score;
@@ -151,7 +150,6 @@ function newGame() {
 }
 function obstacleGenerate() {
   const randomObstacle = Math.floor(Math.random() * 3 + 1);
-  console.log(gotImages[randomObstacle]);
   new Obstacle(
     gotImages[randomObstacle],
     obstacleSet[Math.floor(Math.random() * 3)],
