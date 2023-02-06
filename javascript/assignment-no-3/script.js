@@ -1,4 +1,8 @@
+const WIDTH = 100; //in percentage
+const HEIGHT = 35; //in vh
 let container = document.querySelector(".carousel-container");
+container.style.width = WIDTH + "%";
+container.style.height = HEIGHT + "vh";
 let imgContainer = document.querySelector(".carousel-image-wrapper");
 let currentImage = 1;
 let noOfImgs = imgContainer.children.length;
@@ -42,6 +46,13 @@ function addTransitionListener() {
   });
 }
 
+/**
+ * Slides individual slide in desired direction of either left or right or jumps to a desired slide
+ *
+ * @param {*} direction
+ * @param {*} toPosition
+ * @returns void
+ */
 function imageSlide(direction = null, toPosition = null) {
   if (imgTransition === true) {
     let image = document.querySelector(".img-1");
@@ -84,7 +95,16 @@ function runCarousel() {
   }
 }
 
-addButton();
-addIndicator();
-addTransitionListener();
-runCarousel();
+function main() {
+  window.onload = () => {
+    setInterval(function () {
+      imageSlide((direction = "right"));
+    }, 2000);
+  };
+  addButton();
+  addIndicator();
+  addTransitionListener();
+  runCarousel();
+}
+
+main();

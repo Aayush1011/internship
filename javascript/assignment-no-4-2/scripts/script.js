@@ -9,6 +9,7 @@ const BOX_BACKGROUND = "#EA5F15";
 const ANIMATION_STEP = 2;
 const ANIMATION_INTERVAL = 100;
 let boxPosition = [];
+let emptyPositions = 0;
 let image;
 /**
  * Sets style of provided container element
@@ -22,7 +23,8 @@ function setContainerStyle(canvas) {
 }
 
 class Box {
-  constructor(xPosition, yPosition, xDirection, yDirection) {
+  constructor(boxNumber, xPosition, yPosition, xDirection, yDirection) {
+    this.boxNumber = boxNumber;
     this.xPosition = xPosition;
     this.yPosition = yPosition;
     this.xDirection = xDirection;
@@ -31,11 +33,7 @@ class Box {
   }
 
   changeBoxPosition(ctx) {
-    //   let image = new Image();
-    //   image.onload = () => {
     ctx.drawImage(image, this.xPosition, this.yPosition, BOX_WIDTH, BOX_HEIGHT);
-    // };
-    // image.src = "assets/ant.png";
   }
 
   checkCollision() {
@@ -51,30 +49,30 @@ class Box {
       this.yDirection *= -1;
     }
     for (let i = 0; i < NUMBER_OF_BOXES; i++) {
-      if (boxPosition[i] === this) continue;
-       if (
-        boxPosition[i].xPosition + BOX_WIDTH <= this.xPosition ||
-        boxPosition[i].xPosition >= this.xPosition + BOX_WIDTH 
-      ) 
-          this.xDirection *= -1;
-      else if (
-        boxPosition[i].yPosition + BOX_HEIGHT <= this.yPosition ||
-        boxPosition[i].yPosition >= this.yPosition + BOX_HEIGHT
-      )
+      if (boxPosition[i] === this || typeof boxPosition[i] === "undefined")
+        continue;
+      if (
+        boxPosition[i].xPosition + BOX_WIDTH >= this.xPosition &&
+        boxPosition[i].xPosition <= this.xPosition + BOX_WIDTH &&
+        boxPosition[i].yPosition + BOX_HEIGHT >= this.yPosition &&
+        boxPosition[i].yPosition <= this.yPosition + BOX_HEIGHT
+      ) {
+        this.xDirection *= -1;
         this.yDirection *= -1;
+      }
     }
   }
 
   deleteBox() {
     const canvas = document.querySelector(".canvas");
-    const ctx = canvas.getContext("2d");
     canvas.addEventListener("click", (Event) => {
       if (
-        this.xPosition <= Event.clientX <= this.xPosition + BOX_WIDTH &&
-        this.yPosition <= Event.clientY <= this.yPosition + BOX_HEIGHT
+        this.xPosition <= Event.clientX &&
+        Event.clientX <= this.xPosition + BOX_WIDTH &&
+        this.yPosition <= Event.clientY &&
+        Event.clientY <= this.yPosition + BOX_HEIGHT
       ) {
-        ctx.clearRect(0, 0, this.xPosition, this.yPosition);
-        delete this;
+        delete boxPosition[this.boxNumber];
       }
     });
   }
@@ -86,28 +84,33 @@ function getRandomPosition(maximum, minimum) {
 
 function initializeBoxes(ctx) {
   let direction = [1, -1];
-  let xPositions = [];
-  let yPositions = [];
   let xPosition = 0;
   let yPosition = 0;
+  let getNextPosition = null;
   for (let i = 0; i < NUMBER_OF_BOXES; i++) {
     //checking so that each starting position of each box is unique
     do {
       xPosition = getRandomPosition(CONTAINER_WIDTH - BOX_WIDTH, 0);
       yPosition = getRandomPosition(CONTAINER_HEIGHT - BOX_HEIGHT, 0);
-    } while (
-      xPosition + BOX_WIDTH in xPositions &&
-      yPosition + BOX_HEIGHT in yPositions
-    );
-    xPositions.push(xPosition + BOX_WIDTH);
-    yPositions.push(yPosition + BOX_HEIGHT);
-    console.log(xPositions, yPositions);
+      if (boxPosition.length > 0) {
+        getNextPosition = boxPosition.every(
+          (box) =>
+            xPosition > box.xPosition + BOX_WIDTH ||
+            xPosition + BOX_WIDTH < box.xPosition ||
+            yPosition > box.yPosition + BOX_HEIGHT ||
+            yPosition + BOX_HEIGHT < box.yPosition
+        );
+      } else {
+        getNextPosition = true;
+      }
+    } while (!getNextPosition);
     image = new Image();
     image.onload = () => {
       ctx.drawImage(image, xPosition, yPosition, BOX_WIDTH, BOX_HEIGHT);
     };
     image.src = "assets/ant.png";
     const box = new Box(
+      i,
       xPosition,
       yPosition,
       direction[Math.floor(Math.random() * 2)],
@@ -130,21 +133,22 @@ const animateBoxes = () => {
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, CONTAINER_WIDTH, CONTAINER_HEIGHT);
   requestAnimationFrame(animateBoxes);
-  //   setInterval(() => {
   for (let i = 0; i < NUMBER_OF_BOXES; i++) {
-    const box = boxPosition[i];
-
-    box.changeBoxPosition(ctx);
-    box.checkCollision(boxPosition);
+    let box = boxPosition[i];
+    if (typeof box !== "undefined") {
+      box.checkCollision(boxPosition);
+      box.changeBoxPosition(ctx);
+    } else if (boxPosition.filter(String).length == 0) {
+      boxPosition = [];
+      initializeBoxes(ctx);
+    }
   }
-  // ctx.clearRect(0, 0, CONTAINER_WIDTH, CONTAINER_HEIGHT);
-  //   }, ANIMATION_INTERVAL);
 };
 
 function main() {
   const canvas = document.querySelector(".canvas");
   setContainerStyle(canvas);
-  let ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d");
   initializeBoxes(ctx);
   animateBoxes();
 }
