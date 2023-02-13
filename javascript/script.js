@@ -18,6 +18,7 @@ function main() {
     "Assignment No-4-2",
     "Assignment No-5",
     "Assignment No-6",
+    "Final Project",
   ];
   let links = [
     {
@@ -55,6 +56,10 @@ function main() {
     {
       Code: "https://github.com/Aayush1011/internship/tree/main/javascript/assignment-no-6",
       Demo: "https://aayush1011.github.io/internship/javascript/assignment-no-6",
+    },
+    {
+      Code: "https://github.com/Aayush1011/internship/tree/main/javascript/final-project",
+      Demo: "https://aayush1011.github.io/internship/javascript/final-project",
     },
   ];
   createHeader(container, "Javascript Assignments");
