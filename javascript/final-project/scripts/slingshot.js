@@ -61,9 +61,16 @@ class Slingshot {
     canvas.addEventListener("mousemove", (e) => {
       if (!this.paused && this.draggable && !this.disabled) {
         this.drag = true;
-        this.slingshotCenterX = parseInt(e.clientX);
-        this.slingshotCenterY = parseInt(e.clientY);
-        return [this.slingshotCenterX, this.slingshotCenterY];
+        if (
+          e.clientX <= this.position.x + this.width / 2 + 250 &&
+          e.clientX >= this.position.x + this.width / 2 - 250 &&
+          e.clientY <= this.position.y + 200 &&
+          e.clientY >= this.position.y - 100
+        ) {
+          this.slingshotCenterX = parseInt(e.clientX);
+          this.slingshotCenterY = parseInt(e.clientY);
+          return [this.slingshotCenterX, this.slingshotCenterY];
+        }
       }
     });
 
