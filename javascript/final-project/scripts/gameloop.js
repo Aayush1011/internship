@@ -104,6 +104,7 @@ class Gameloop {
       return;
     }
     if (this.turnCount % 2 === 0) {
+      this.players[0].slingshot.totalMarbles = 3;
       this.players[0].marble.scoreUpdated = false;
       this.players[0].disabled = false;
       this.players[1].disabled = true;
@@ -113,6 +114,7 @@ class Gameloop {
       this.pathsSelected.push(this.currentPath);
       this.bird.path = paths[this.diffcultyIndex][this.currentPath];
     } else {
+      this.players[1].slingshot.totalMarbles = 3;
       this.players[1].marble.scoreUpdated = false;
       this.players[0].disabled = true;
       this.players[1].disabled = false;

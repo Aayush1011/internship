@@ -52,7 +52,7 @@ class Slingshot {
         mouseX <= this.position.x + this.width / 2 + 20 &&
         mouseX >= this.position.x + this.width / 2 - 20 &&
         mouseY <= this.position.y + 65 &&
-        mouseY >= this.position.y + 35
+        mouseY >= this.position.y + 15
       ) {
         this.draggable = true;
       }
