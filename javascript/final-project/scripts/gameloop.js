@@ -166,7 +166,7 @@ class Gameloop {
     );
     this.overlay = new Overlay(this.canvas.width, this.canvas.height);
     this.overlay.addClickHandler(this.canvas.canvas);
-    this.update();
+    this.updateLoop = setInterval(this.update.bind(this), 20);
   }
 
   update() {
@@ -199,6 +199,5 @@ class Gameloop {
       this.players,
       this.currentPlayer
     );
-    this.updateLoop = window.requestAnimationFrame(this.update.bind(this));
   }
 }

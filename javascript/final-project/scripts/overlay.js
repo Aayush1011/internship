@@ -261,12 +261,6 @@ class Overlay {
       this.canvasWidth / 25,
       this.canvasWidth / 25
     );
-    console.log(
-      20,
-      this.canvasHeight - 275 - this.canvasWidth / 25,
-      this.canvasWidth / 25,
-      this.canvasWidth / 25
-    );
     ctx.beginPath();
     ctx.moveTo(40, this.canvasHeight - 255 - this.canvasWidth / 25);
     ctx.lineTo(40, this.canvasHeight - 235 - this.canvasWidth / 25);

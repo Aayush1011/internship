@@ -62,10 +62,10 @@ class Slingshot {
       if (!this.paused && this.draggable && !this.disabled) {
         this.drag = true;
         if (
-          e.clientX <= this.position.x + this.width / 2 + 250 &&
-          e.clientX >= this.position.x + this.width / 2 - 250 &&
+          e.clientX <= this.position.x + this.width / 2 + 150 &&
+          e.clientX >= this.position.x + this.width / 2 - 150 &&
           e.clientY <= this.position.y + 200 &&
-          e.clientY >= this.position.y - 100
+          e.clientY >= this.position.y - 150
         ) {
           this.slingshotCenterX = parseInt(e.clientX);
           this.slingshotCenterY = parseInt(e.clientY);
