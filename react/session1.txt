@@ -1,0 +1,2 @@
+to make a value controlled in react assign its value using useState hook
+absolute when something overlaps another

@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+
+@import "./global";
+@import "./Dashboard/dashboard";
+@import "./Sidebar/sidebar";
+@import "./MainSection/main-section";
+@import "./Header/header";
+@import "./NotificationBox/notification-box";
+@import "./TicketsSection/tickets";
+
+html {
+  font-size: 10px;
+}
