@@ -1,0 +1,23 @@
+.logo {
+  display: flex;
+  column-gap: 1.2rem;
+  white-space: nowrap;
+  align-items: center;
+  padding: 3.7rem 4.3rem 5.9rem 3.2rem;
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.4px;
+    opacity: 0.7;
+  }
+}
+
+.signUpPageStyle {
+  padding: 0;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+}
