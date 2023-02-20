@@ -16,6 +16,7 @@ function main() {
     "Bootstrap",
     "Frontend Final Project",
     "Javascript",
+    "React",
   ];
   let links = [
     { Link: "http://aayush1011.github.io/internship/figma/" },
@@ -25,6 +26,7 @@ function main() {
     { Link: "http://aayush1011.github.io/internship/bootstrap/" },
     { Link: "http://aayush1011.github.io/internship/frontend-final-project/" },
     { Link: "http://aayush1011.github.io/internship/javascript/" },
+    { Link: "http://aayush1011.github.io/internship/react/" },
   ];
   createHeader(container, "Assignments");
   createButton(container);
