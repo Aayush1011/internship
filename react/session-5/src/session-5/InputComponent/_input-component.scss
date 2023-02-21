@@ -1,0 +1,50 @@
+.input {
+  &__remember-me {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 1.2rem;
+  }
+  &__label {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 0.6rem;
+
+    &__remember-me {
+      margin-bottom: 0;
+      text-transform: capitalize;
+    }
+  }
+
+  &__field {
+    display: block;
+    background: $gray-extra-light;
+    border: 1px solid $gray-lightest;
+    border-radius: 8px;
+    width: 85%;
+    padding: 1.1rem 1.6rem;
+
+    &__remember-me {
+      width: auto;
+    }
+
+    &::placeholder {
+      font-family: "Mulish";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      letter-spacing: 0.3px;
+      color: $gray-dark;
+      opacity: 0.4;
+      text-transform: capitalize;
+    }
+  }
+}
