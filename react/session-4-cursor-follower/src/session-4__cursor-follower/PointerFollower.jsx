@@ -1,11 +1,14 @@
+import { useRef } from "react";
+
 import usePointerFollower from "./usePointerFollower";
 
 import { Wrapper, Follower } from "./PointerFollower.styles";
 
-const PointerFollower = () => {
-  const { dimensions, mousePosition, icon } = usePointerFollower();
+const PointerFollower = ({ icon, background }) => {
+  const wrapperRef = useRef();
+  const { mousePosition } = usePointerFollower(wrapperRef);
   return (
-    <Wrapper divWidth={dimensions.width} divHeight={dimensions.height}>
+    <Wrapper ref={wrapperRef} background={background}>
       <Follower icon={icon} left={mousePosition.x} top={mousePosition.y} />
     </Wrapper>
   );

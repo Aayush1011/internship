@@ -1,30 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: ${({ divWidth }) => `${divWidth}px`};
-  height: ${({ divHeight }) => `${divHeight}px`};
-
-  ::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: ${({ divHeight }) => `${divHeight}px`};
-    top: 0;
-    left: ${({ divWidth }) => `${divWidth / 2}px`};
-    background: black;
-    border: 2px solid black;
-  }
-
-  ::after {
-    content: "";
-    position: absolute;
-    width: ${({ divWidth }) => `${divWidth}px`};
-    height: 2px;
-    top: ${({ divHeight }) => `${divHeight / 2}px`};
-    left: 0;
-    background: black;
-    border: 2px solid black;
-  }
+  width: 50%;
+  height: 50vh;
+  background: ${({ background }) => background};
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Follower = styled.picture`
