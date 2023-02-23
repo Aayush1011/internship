@@ -41,6 +41,14 @@ function main() {
       Code: "https://github.com/Aayush1011/internship/tree/main/react/session-4-cursor-follower",
       Demo: "https://peaceful-muffin-d676e5.netlify.app/",
     },
+    {
+      Code: "https://github.com/Aayush1011/internship/tree/main/react/session-5",
+      Demo: "https://hilarious-kitten-864e0c.netlify.app/",
+    },
+    {
+      Code: "https://github.com/Aayush1011/internship/tree/main/react/session-6",
+      Demo: "https://eloquent-licorice-37babd.netlify.app/",
+    },
   ];
   createHeader(container, "React Assignments");
   createButton(container);
