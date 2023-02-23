@@ -1,0 +1,39 @@
+.filter {
+  &-box {
+    position: absolute;
+    top: 20rem;
+    right: 3%;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 1rem;
+    background: $almost-black;
+    box-shadow: 8px 8px 8px $almost-black;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 47.5%;
+      margin-left: -0.5rem;
+      border-width: 1rem;
+      border-style: solid;
+      border-color: transparent transparent $almost-black transparent;
+    }
+    &__text {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.9rem;
+      line-height: 2.4rem;
+      letter-spacing: 0.4px;
+      color: $gray-light;
+      text-align: center;
+      border-bottom: 1px solid $lighter-grey;
+      padding: 1rem 2rem;
+      text-transform: capitalize;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

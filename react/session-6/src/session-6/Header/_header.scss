@@ -1,0 +1,59 @@
+.header {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5.5rem;
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    letter-spacing: 0.3px;
+    color: $black;
+  }
+
+  &__interaction {
+    display: flex;
+    align-items: center;
+    &-left {
+      display: flex;
+      column-gap: 2.4rem;
+      padding-right: 3.2rem;
+      border-right: 1px solid $lighter-grey;
+
+      &__input {
+        border-radius: 10rem;
+        border: 2px solid $almost-black;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      column-gap: 1.4rem;
+      padding-left: 3.2rem;
+
+      &__name {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        text-align: right;
+        letter-spacing: 0.2px;
+        color: $black;
+      }
+
+      &__avatar {
+        border: 1.5px solid $lighter-grey;
+      }
+    }
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}

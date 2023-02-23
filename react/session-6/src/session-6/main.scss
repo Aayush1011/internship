@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+
+@import "./global";
+@import "./Dashboard/dashboard";
+@import "./LogInSignUp/login-signup";
+@import "./InputComponent/input-component";
+@import "./ButtonComponent/button-component";
+@import "./Logo/logo";
+@import "./Sidebar/sidebar";
+@import "./MainSection/main-section";
+@import "./Header/header";
+@import "./NotificationBox/notification-box";
+@import "./TicketsSection/tickets";
+@import "./FilterBox/filter-box";
+@import "./Overview/overview";
+@import "./OverviewTopSection/overview-top-section";
+@import "./OverviewTopSectionItem/overview-top-section-item";
+
+html {
+  font-size: 10px;
+}

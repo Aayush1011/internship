@@ -1,0 +1,39 @@
+.sidebar {
+  font-family: "Mulish", sans-serif;
+  background: $almost-black;
+  color: $light-grey;
+  position: fixed;
+  height: 100vh;
+
+  &__primary-navigation {
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(223, 224, 235, 0.06);
+  }
+
+  &__secondary-navigation {
+    padding-top: 1.6rem;
+  }
+
+  &__item {
+    text-decoration: none;
+    display: flex;
+    column-gap: 2.4rem;
+    padding: 1.8rem 2.4rem 1.8rem 3.2rem;
+
+    &-active {
+      background: $gray;
+      opacity: 0.08;
+      border-left: 3px solid $main-lightblue;
+      color: $main-lightblue;
+    }
+
+    &-name {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2rem;
+      letter-spacing: 0.2px;
+      color: $light-grey;
+    }
+  }
+}
