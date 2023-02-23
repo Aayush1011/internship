@@ -15,6 +15,8 @@ function main() {
     "Session-3-login_signup",
     "Session-4",
     "Session-4-cursor-follower",
+    "Session-5",
+    "Session-6",
   ];
   let links = [
     {
