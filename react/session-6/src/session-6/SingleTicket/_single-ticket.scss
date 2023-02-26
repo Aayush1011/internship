@@ -1,0 +1,61 @@
+.single-ticket {
+  font-family: "Mulish", sans-serif;
+  background: white;
+  border: 1px solid $lighter-grey;
+  border-radius: 1rem;
+  padding: 3.2rem;
+
+  &__back-button {
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    column-gap: 2.4rem;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  &__issue {
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+  }
+
+  &__updated {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  &__details {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.1px;
+    color: $gray-light;
+    margin-bottom: 1rem;
+
+    &-info {
+      font-weight: 600;
+      color: $black;
+    }
+  }
+  &__priority-pill {
+    border-radius: 10rem;
+    width: fit-content;
+
+    &-text {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.4rem;
+      text-align: center;
+      padding: 0.5rem 1.2rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}

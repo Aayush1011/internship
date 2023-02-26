@@ -1,10 +1,14 @@
 import { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Dashboard from "./session-6/Dashboard";
 import LogInSignUp from "./session-6/LogInSignUp";
 import Overview from "./session-6/Overview";
 import Sidebar from "./session-6/Sidebar";
+import SingleTicket from "./session-6/SingleTicket";
+import NotFound from "./session-6/NotFound";
 
 import overviewIcon from "./session-6/assets/1. overview.svg";
 import ticketsIcon from "./session-6/assets/2. tickets.svg";
@@ -22,7 +26,7 @@ export const TicketContext = createContext();
 export const SearchContext = createContext();
 export const FilterContext = createContext();
 const navigableItems = [
-  ["/loggedin/overview", overviewIcon, "Overview"],
+  ["/loggedin/", overviewIcon, "Overview"],
   ["/loggedin/dashboard", ticketsIcon, "Tickets"],
 ];
 const primaryNavigationItems = [
@@ -37,35 +41,40 @@ const secondaryNavigationItems = [
 ];
 
 function App() {
-  // return <EntireSite />;
   const [allTickets, setAllTickets] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState(null);
   return (
-    <BrowserRouter>
+    <>
       <TicketContext.Provider value={[allTickets, setAllTickets]}>
         <SearchContext.Provider value={[searchTerm, setSearchTerm]}>
           <FilterContext.Provider value={[filter, setFilter]}>
-            <Routes>
-              <Route path="/" element={<LogInSignUp />} />
-              <Route
-                path="/loggedin"
-                element={
-                  <Sidebar
-                    navigableItems={navigableItems}
-                    primaryNavigationItems={primaryNavigationItems}
-                    secondaryNavigationItems={secondaryNavigationItems}
-                  />
-                }
-              >
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="overview" element={<Overview />} />
-              </Route>
-            </Routes>
+            <ToastContainer position="top-right" theme="colored" />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<LogInSignUp />} />
+                <Route
+                  path="/loggedin"
+                  element={
+                    <Sidebar
+                      navigableItems={navigableItems}
+                      primaryNavigationItems={primaryNavigationItems}
+                      secondaryNavigationItems={secondaryNavigationItems}
+                    />
+                  }
+                >
+                  <Route path="" element={<Overview />} />
+                  <Route path="dashboard" element={<Dashboard />}>
+                    <Route path=":id" element={<SingleTicket />} />
+                  </Route>
+                </Route>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
           </FilterContext.Provider>
         </SearchContext.Provider>
       </TicketContext.Provider>
-    </BrowserRouter>
+    </>
   );
 }
 

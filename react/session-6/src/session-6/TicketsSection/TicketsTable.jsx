@@ -1,5 +1,7 @@
 import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 import { TicketContext, SearchContext, FilterContext } from "../../App";
 
@@ -10,22 +12,30 @@ const TicketsTable = ({ tableHeadingsArray }) => {
   const [allTickets, setAllTickets] = useContext(TicketContext);
   const [searchTerm, setSearchTerm] = useContext(SearchContext);
   const [filterTickets, setFilterTickets] = useContext(FilterContext);
+  const navigateToSinglePage = useNavigate();
 
   useEffect(() => {
-    axios
-      .get(
-        "https://my-json-server.typicode.com/aayush1011/json-server-db/tickets"
-      )
-      .then((data) => {
-        setAllTickets(data.data.reverse());
-      });
+    axios.get("http://localhost:3000/tickets").then((data) => {
+      setAllTickets(data.data.reverse());
+    });
   }, []);
 
   const deleteTicket = async (index) => {
-    await axios.delete(
-      `https://my-json-server.typicode.com/aayush1011/json-server-db/tickets/${allTickets[index].id}`
-    );
-    setAllTickets(allTickets.filter((ticket, i) => i !== index));
+    try {
+      const deleted = await axios.delete(
+        `http://localhost:3000/tickets/${allTickets[index].id}`
+      );
+      if (deleted) {
+        setAllTickets(allTickets.filter((ticket, i) => i !== index));
+        toast.success("Ticket deleted successfully");
+      }
+    } catch (error) {
+      toast.error("Unable to delete ticket");
+    }
+  };
+
+  const showSingleTicket = (id) => {
+    navigateToSinglePage(`/loggedin/dashboard/${id}`);
   };
 
   const tableHeadings = allTableHeadings.map((tableHeading) => {
@@ -43,7 +53,10 @@ const TicketsTable = ({ tableHeadingsArray }) => {
     )
     .map((ticket, index) => {
       return (
-        <tr className="tickets-table__row">
+        <tr
+          className="tickets-table__row"
+          onClick={() => showSingleTicket(ticket.id)}
+        >
           <td className="tickets-table__data">
             <div className="tickets-table__details">
               <picture>

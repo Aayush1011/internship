@@ -8,6 +8,7 @@
 
   &:hover {
     border-color: $main-blue;
+    cursor: pointer;
     .item-name,
     .item-quantity {
       color: $main-blue;
@@ -23,6 +24,7 @@
     letter-spacing: 0.4px;
     color: $gray;
     margin-bottom: 2.2rem;
+    white-space: nowrap;
   }
 
   &-quantity {

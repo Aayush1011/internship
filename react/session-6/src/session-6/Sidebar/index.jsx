@@ -18,10 +18,10 @@ const Sidebar = ({
       <div key={index + 1}>
         <NavLink
           to={navigableItem[0]}
-          className="sidebar__item"
-          // className={({ isActive }) =>
-          //   isActive ? "sidebar__item sidebar__item-active" : "sidebar__item"
-          // }
+          // className="sidebar__item"
+          className={({ isActive }) =>
+            isActive ? "sidebar__item sidebar__item-active" : "sidebar__item"
+          }
         >
           <img
             key={index + 2}

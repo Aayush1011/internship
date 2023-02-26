@@ -207,10 +207,10 @@
   -moz-column-gap: 2.4rem;
        column-gap: 2.4rem;
   padding: 1.8rem 2.4rem 1.8rem 3.2rem;
+  box-sizing: border-box;
 }
 .sidebar__item-active {
-  background: #9fa2b4;
-  opacity: 0.08;
+  background: rgba(159, 162, 180, 0.08);
   border-left: 3px solid #dde2ff;
   color: #dde2ff;
 }
@@ -447,7 +447,7 @@
 .filter-box {
   position: absolute;
   top: 20rem;
-  right: 3%;
+  right: 12%;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
@@ -486,6 +486,7 @@
   padding: 3rem;
   background: #f7f8fc;
   padding-left: 28.5rem;
+  height: 100vh;
 }
 
 .overview-top-section {
@@ -504,6 +505,7 @@
 }
 .item:hover {
   border-color: #3751ff;
+  cursor: pointer;
 }
 .item:hover .item-name,
 .item:hover .item-quantity {
@@ -518,6 +520,7 @@
   letter-spacing: 0.4px;
   color: #9fa2b4;
   margin-bottom: 2.2rem;
+  white-space: nowrap;
 }
 .item-quantity {
   font-style: normal;
@@ -527,6 +530,61 @@
   text-align: center;
   letter-spacing: 1px;
   color: #252733;
+}
+
+.single-ticket {
+  font-family: "Mulish", sans-serif;
+  background: white;
+  border: 1px solid #dfe0eb;
+  border-radius: 1rem;
+  padding: 3.2rem;
+}
+.single-ticket__back-button :hover {
+  cursor: pointer;
+}
+.single-ticket__heading {
+  display: flex;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+.single-ticket__issue {
+  font-size: 1.9rem;
+  line-height: 2.4rem;
+}
+.single-ticket__updated {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+.single-ticket__details {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: 0.1px;
+  color: #c5c7cd;
+  margin-bottom: 1rem;
+}
+.single-ticket__details-info {
+  font-weight: 600;
+  color: #252733;
+}
+.single-ticket__priority-pill {
+  border-radius: 10rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.single-ticket__priority-pill-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  text-align: center;
+  padding: 0.5rem 1.2rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: white;
 }
 
 html {

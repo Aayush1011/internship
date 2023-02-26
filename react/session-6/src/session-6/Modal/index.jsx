@@ -14,6 +14,8 @@ import Stack from "@mui/material/Stack";
 import axios from "axios";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { TicketContext } from "../../App";
 
@@ -30,6 +32,12 @@ const style = {
 };
 
 export function BasicModal({ openModal, handleClose }) {
+  const navigateToLogIn = useNavigate();
+
+  const logOutHandler = () => {
+    window.sessionStorage.removeItem("loggedIn");
+    navigateToLogIn("/", { replace: true });
+  };
   return (
     <div>
       <Modal
@@ -42,9 +50,12 @@ export function BasicModal({ openModal, handleClose }) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Jones Ferdinand
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }}>
             Some Jones Ferdinand Things
           </Typography>
+          <Button variant="contained" color="error" onClick={logOutHandler}>
+            Log Out
+          </Button>
         </Box>
       </Modal>
     </div>
@@ -57,7 +68,6 @@ export function TicketModal({ openModal, handleClose }) {
     priority: "",
     customerName: "",
     ticketDetails: "",
-    date: dayjs(),
   });
 
   const handleChange = (e) => {
@@ -72,24 +82,30 @@ export function TicketModal({ openModal, handleClose }) {
     e.preventDefault();
     const dataToPush = {
       ...ticketModalState,
+      avatar: "/assets/w 7.png",
       id: Math.floor(Math.random() * 1000),
-      date: ticketModalState.date.format("LL"),
+      date: dayjs().format("LL"),
       ticketDetailsUpdated: "Updated 1 day ago",
       customerNameDate: `on ${dayjs().format("DD.MM.YYYY")}`,
       time: dayjs().format("LT"),
     };
-    const completion = await axios.post(
-      "https://my-json-server.typicode.com/aayush1011/json-server-db/tickets",
-      dataToPush,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
+    try {
+      const completion = await axios.post(
+        "http://localhost:3000/tickets",
+        dataToPush,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (completion) {
+        toast.success("New ticket added successfully");
+        setAllTickets((previousTickets) => [dataToPush, ...previousTickets]);
+        handleClose();
       }
-    );
-    if (completion) {
-      setAllTickets((previousTickets) => [dataToPush, ...previousTickets]);
-      handleClose();
+    } catch {
+      toast.error("Unable to add new ticket");
     }
   };
 
