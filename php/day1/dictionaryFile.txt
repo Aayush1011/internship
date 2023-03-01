@@ -1,0 +1,6 @@
+anise
+apple
+cow
+dog
+llama
+zebra
