@@ -21,6 +21,11 @@ const useSessionHook = () => {
       {
         userId: JSON.parse(window.sessionStorage.getItem("user")).id,
         ...formState,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
     return output;
@@ -31,6 +36,41 @@ const useSessionHook = () => {
       `http://localhost/poker-planning/session/${sessionId}`,
       {
         sessionId,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return output;
+  };
+
+  const sessionClose = async (sessionId) => {
+    const output = await axios.post(
+      `http://localhost/poker-planning/session/${sessionId}/close`,
+      {
+        sessionId,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return output;
+  };
+
+  const checkClosedSessionStatus = async (sessionId) => {
+    const output = await axios.post(
+      `http://localhost/poker-planning/session/${sessionId}/check-session-close`,
+      {
+        sessionId,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
     return output;
@@ -40,6 +80,8 @@ const useSessionHook = () => {
     getAllUserSessions,
     createNewSession,
     getSession,
+    sessionClose,
+    checkClosedSessionStatus,
   };
 };
 

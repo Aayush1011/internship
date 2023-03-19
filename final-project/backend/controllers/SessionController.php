@@ -122,5 +122,63 @@
             return $response;
         }
 
+        function closeSession() {
+            $response = array();
+            try {
+                $json = file_get_contents('php://input');
+                $data = json_decode($json, true);
+
+                $update_session = "UPDATE `sessions` SET status=? WHERE id=?";
+                $new_query_stmt = $this->conn->prepare($update_session);
+                $status = "closed";
+                $new_query_stmt->bind_param('ss', $status, $data['sessionId']);
+                $new_query_stmt->execute();
+
+                if ($new_query_stmt->affected_rows > 0) {
+                    header('HTTP/1.1 200 OK');
+                    $response['message'] = 'success';
+                } else {
+                    header('HTTP/1.1 404 Not Found');
+                    throw new Exception("Requested session could not be closed");
+                }
+            } catch(Exception $e) {
+                $response = array('message'=> $e->getMessage());
+            }
+            header('Content-Type: application/json; charset=utf-8');
+            return $response;
+        }
+
+        function checkClosedSessionStatus() {
+            $response = array();
+            try {
+                $json = file_get_contents('php://input');
+                $data = json_decode($json, true);
+                
+                $update_session = "SELECT status FROM `sessions` WHERE id=?";
+                $new_query_stmt = $this->conn->prepare($update_session);
+                $new_query_stmt->bind_param('s', $data['sessionId']);
+                $new_query_stmt->execute();
+                $result = $new_query_stmt->get_result(); 
+                
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    if ($row["status"] === "closed") {
+                        header('HTTP/1.1 200 OK');
+                        $response['message'] = 'success';
+                    } else {
+                        header('HTTP/1.1 404 Not Found');
+                        throw new Exception("Requested session is not closed");
+                    }
+                } else {
+                    header('HTTP/1.1 404 Not Found');
+                    throw new Exception("Requested session could not be found");
+                }
+            } catch(Exception $e) {
+                $response = array('message'=> $e->getMessage());
+            }
+            header('Content-Type: application/json; charset=utf-8');
+            return $response;
+        }
+
 }
 ?>

@@ -120,6 +120,14 @@
                                     $newStoryController->closeStory();
                                     return;
 
+                                case 'close':
+                                    $newSessionController->closeSession();
+                                    return;
+
+                                case 'check-session-close':
+                                    $newSessionController->checkClosedSessionStatus();
+                                    return;    
+                                
                                 default:
                                     # code...
                                     return;

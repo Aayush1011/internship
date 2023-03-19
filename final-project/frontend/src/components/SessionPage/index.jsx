@@ -3,17 +3,19 @@ import { useEffect, useState } from "react";
 import useStoryHook from "../../hooks/useStoryHook";
 import useParticipantHook from "../../hooks/useParticipantHook";
 import useStoryPointHook from "../../hooks/useStoryPointHook";
+import useSessionHook from "../../hooks/useSessionHook";
 import ButtonComponent from "../ButtonComponent";
 import TextAreaComponent from "../TextAreaComponent";
 import InputComponent from "../InputComponent";
 import TopBar from "../TopBar";
 
 import { MdClose, MdOutlineContentCopy } from "react-icons/md";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const SessionPage = () => {
   const sessionId = useParams("id");
+  const navigate = useNavigate();
 
   const {
     addStory,
@@ -33,6 +35,7 @@ const SessionPage = () => {
   } = useStoryPointHook();
 
   const { fetchSessionParticipants, fetchModerator } = useParticipantHook();
+  const { sessionClose, checkClosedSessionStatus } = useSessionHook();
   const [showRightMenu, setShowRightMenu] = useState(false);
   const [sessionDetails, setSessionDetails] = useState({});
   const [showStoryForm, setShowStoryForm] = useState(false);
@@ -59,6 +62,11 @@ const SessionPage = () => {
       }
     });
     const interval = setInterval(() => {
+      checkClosedSessionStatus(sessionId.id).then((result) => {
+        if (result.data.message === "success") {
+          navigate("/home");
+        }
+      });
       fetchSessionParticipants(sessionId.id).then((result) => {
         if (result.data.message === "success") {
           setSessionParticipants([...result.data.rows]);
@@ -231,9 +239,15 @@ const SessionPage = () => {
   };
 
   const saveVotes = () => {
-    closeStory(sessionId.id, currentStoryDetails.id).then(
-      console.log(result.data.message)
-    );
+    closeStory(sessionId.id, currentStoryDetails.id).then((result) => {
+      console.log(result.data.message);
+    });
+  };
+
+  const closeSession = () => {
+    sessionClose(sessionId.id).then((result) => {
+      console.log(result.data.message);
+    });
   };
 
   return (
@@ -373,6 +387,11 @@ const SessionPage = () => {
                 <p className="session-page_role">{participant.role}</p>
               </div>
             ))}
+          <ButtonComponent
+            text="Close Session"
+            colorClass="button--error"
+            callback={closeSession}
+          />
         </div>
       </div>
       {activateStoryModal && (

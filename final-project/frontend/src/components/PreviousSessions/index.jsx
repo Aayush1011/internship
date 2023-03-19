@@ -57,7 +57,7 @@ const PreviousSessions = () => {
 
   return (
     <div className="sessions">
-      <h1 className="sessions-title">Previous Sessions</h1>
+      <h1 className="sessions-title">Sessions</h1>
       {allUserSessions.message === "success" ? (
         <div>
           <table className="sessions-table">
@@ -79,9 +79,7 @@ const PreviousSessions = () => {
         </div>
       ) : (
         <div className="sessions-rejection_container">
-          <h2 className="sessions-rejection_text">
-            No previous sessions found
-          </h2>
+          <h2 className="sessions-rejection_text">No sessions found</h2>
         </div>
       )}
     </div>
