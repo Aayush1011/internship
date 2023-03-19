@@ -1,0 +1,47 @@
+.session-form {
+  &_container {
+    width: 50%;
+    padding: 30px;
+    border-bottom: 1px solid $light-grey;
+    border-left: 1px solid $light-grey;
+
+    @include devices(tablet) {
+      width: 85%;
+      padding: 20px;
+      border: none;
+    }
+  }
+  &_actual {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &_title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $almost-black;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  &_label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 0.6rem;
+  }
+
+  &_input {
+    box-sizing: border-box;
+    display: block;
+    background: $gray-extra-light;
+    border: 1px solid $gray-lightest;
+    width: 100%;
+    padding: 1.1rem 1.6rem;
+  }
+}

@@ -1,0 +1,23 @@
+.text-area {
+  &_label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 0.6rem;
+  }
+
+  &_input {
+    box-sizing: border-box;
+    display: block;
+    background: $gray-extra-light;
+    border: 1px solid $gray-lightest;
+    width: 100%;
+    padding: 1.1rem 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}

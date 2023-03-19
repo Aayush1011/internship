@@ -1,0 +1,95 @@
+.sessions {
+  width: 50%;
+  padding: 30px;
+  border-bottom: 1px solid $light-grey;
+
+  @include devices(tablet) {
+    width: 85%;
+    padding: 20px;
+    border: none;
+  }
+
+  &-title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $almost-black;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  &-rejection {
+    &_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &_text {
+      vertical-align: middle;
+      color: $gray;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 26px;
+      align-self: center;
+    }
+  }
+
+  &-table {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    &__title {
+      text-align: left;
+      font-style: normal;
+      font-weight: 700;
+      font-size: medium;
+      line-height: 1.8rem;
+      letter-spacing: 0.2px;
+      color: $gray;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid $lighter-grey;
+
+      &:first-child {
+        padding-left: 3.1rem;
+
+        @include devices(tablet) {
+          padding-left: 0;
+        }
+      }
+
+      &:last-child {
+        padding-right: 3.1rem;
+
+        @include devices(tablet) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &__row {
+      &:hover {
+        background: $main-blue-opacity;
+        cursor: pointer;
+      }
+    }
+
+    &__data {
+      padding: 16px 0;
+      border-bottom: 1px solid $lighter-grey;
+      vertical-align: middle;
+      font-size: medium;
+
+      &:first-child {
+        padding-left: 3.1rem;
+
+        @include devices(tablet) {
+          padding-left: 0;
+        }
+      }
+
+      &:last-child {
+        padding-right: 3.1rem;
+
+        @include devices(tablet) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

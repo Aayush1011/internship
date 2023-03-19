@@ -1,0 +1,293 @@
+.session-page {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  padding: 40px;
+  @include devices(tablet) {
+    padding: 20px;
+    display: block;
+  }
+
+  &_info {
+    width: 80%;
+    padding-right: 10px;
+
+    @include devices(tablet) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &_title {
+    padding: 10px 0;
+    font-weight: 500;
+    &-name {
+      font-size: 32px;
+      color: $almost-black;
+    }
+    &-content {
+      color: $gray;
+    }
+  }
+
+  &_description {
+    font-weight: 500;
+    padding: 20px 0;
+
+    &-name {
+      font-size: 20px;
+      color: $almost-black;
+      margin-bottom: 10px;
+    }
+    &-content {
+      font-size: 20px;
+      color: $gray;
+    }
+  }
+
+  &_link {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    padding: 10px 20px;
+    margin: 10px 0;
+    word-break: break-all;
+
+    @include devices(tablet) {
+      justify-content: unset;
+    }
+
+    &:hover {
+      background: $main-blue-opacity;
+      cursor: pointer;
+    }
+
+    &-actual {
+      color: $gray;
+    }
+  }
+
+  &_add-story {
+    margin: 30px 0;
+  }
+
+  &_stories-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  &_story {
+    &-container {
+      box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+      margin-bottom: 16px;
+      padding: 20px 10px;
+      font-size: 16px;
+
+      &:hover {
+        background: $main-blue-opacity;
+        cursor: pointer;
+      }
+    }
+
+    &-description {
+      margin-top: 10px;
+      color: $gray;
+    }
+
+    &-buttons {
+      display: flex;
+      column-gap: 10px;
+      justify-content: flex-end;
+      margin-right: 10px;
+      flex-grow: 1;
+    }
+  }
+
+  &_rejection {
+    color: $gray;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &_participants {
+    width: 20%;
+    padding-left: 10px;
+
+    @include devices(tablet) {
+      flex-direction: column;
+      row-gap: 40px;
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: -50px;
+      background-color: $main-orange;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding: 0 10px;
+      padding-top: 60px;
+    }
+
+    &-tablet {
+      right: 0;
+      width: 250px;
+    }
+
+    &-close {
+      display: none;
+
+      @include devices(tablet) {
+        display: block;
+        z-index: 2;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+
+  &_members {
+    font-size: 32px;
+    padding: 10px 0;
+    padding-bottom: 30px;
+  }
+
+  &_participant {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  &_role {
+    color: $gray;
+
+    @include devices(tablet) {
+      color: $gray-dark;
+    }
+  }
+
+  &_modal {
+    top: 300px;
+    margin-top: -150px;
+    -webkit-filter: blur(0.5);
+    filter: blur(0.5);
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    -webkit-transition: opacity 300ms ease 200ms,
+      -webkit-transform 300ms ease 200ms, -webkit-filter 300ms ease 200ms;
+    transition: opacity 300ms ease 200ms, -webkit-transform 300ms ease 200ms,
+      -webkit-filter 300ms ease 200ms;
+    transition: transform 300ms ease 200ms, filter 300ms ease 200ms,
+      opacity 300ms ease 200ms;
+    transition: transform 300ms ease 200ms, filter 300ms ease 200ms,
+      opacity 300ms ease 200ms, -webkit-transform 300ms ease 200ms,
+      -webkit-filter 300ms ease 200ms;
+
+    &-container {
+      position: relative;
+      background: #fff;
+      padding: 40px 20px 20px;
+      overflow: hidden;
+      width: 600px;
+      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+      margin: 0 auto;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &-close {
+      font-size: 20px;
+      display: flex;
+      justify-content: flex-end;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    &-description {
+      font-size: 20px;
+      color: $gray;
+      margin-bottom: 10px;
+    }
+
+    &-points {
+      display: flex;
+      column-gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    &-point {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      border: 1px solid $main-blue;
+      font-size: 16px;
+      width: 7.5%;
+      height: 5vh;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &--active {
+        background: $main-blue;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      column-gap: 10px;
+      justify-content: flex-end;
+    }
+
+    &-value {
+      margin-top: 10px;
+    }
+
+    &-single {
+      display: flex;
+      font-size: 16px;
+      justify-content: space-between;
+
+      &--title {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-vote {
+      color: $gray;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-table {
+      width: 50%;
+    }
+
+    &-end {
+      width: 50%;
+      display: flex;
+      column-gap: 10px;
+      justify-content: flex-end;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import url();
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: $main-blue;
+  color: white;
+
+  &--tablet {
+    @include devices(tablet) {
+      justify-content: unset;
+      column-gap: 30px;
+    }
+  }
+
+  @include devices(tablet) {
+    padding: 15px 20px;
+  }
+
+  &_logo {
+    font-size: 48px;
+    font-weight: 500;
+    font-family: "Signika", sans-serif;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include devices(tablet) {
+      font-size: 30px;
+    }
+  }
+
+  &_right {
+    &-section {
+      display: flex;
+      column-gap: 40px;
+      align-items: center;
+      font-size: 16px;
+
+      @include devices(tablet) {
+        flex-direction: column;
+        row-gap: 40px;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: $main-orange;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+    }
+
+    &-close {
+      display: none;
+
+      @include devices(tablet) {
+        display: block;
+        z-index: 2;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+      }
+    }
+
+    &-tablet {
+      width: 250px;
+    }
+  }
+
+  &_hamburger {
+    display: none;
+    font-size: 20px;
+
+    @include devices(tablet) {
+      display: block;
+    }
+  }
+
+  &_button {
+    margin-top: 0;
+  }
+
+  &_user {
+    display: flex;
+    column-gap: 15px;
+    font-weight: 400;
+    align-items: center;
+
+    @include devices(tablet) {
+    }
+  }
+
+  &_avatar {
+    font-size: 36px;
+  }
+
+  &_username {
+    text-align: center;
+  }
+}

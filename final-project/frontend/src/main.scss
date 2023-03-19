@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap");
+
+html {
+  font-size: 10px;
+}
+
+@import "./global";
+@import "./mixins";
+@import "./components/LogInSignUp/login-signup";
+@import "./components/InputComponent/input-component";
+@import "./components/ButtonComponent/button-component";
+@import "./components/TextAreaComponent/text-area-component";
+@import "./components/TopBar/topbar";
+@import "./components/MainPage/main-page";
+@import "./components/NewSession/new-session";
+@import "./components/PreviousSessions/previous-sessions";
+@import "./components/SessionPage/session-page";

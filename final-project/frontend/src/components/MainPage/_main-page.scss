@@ -1,0 +1,8 @@
+.main-page {
+  display: flex;
+  justify-content: space-between;
+
+  @include devices(tablet) {
+    flex-direction: column;
+  }
+}

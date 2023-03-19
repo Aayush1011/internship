@@ -1,0 +1,118 @@
+.outerDiv {
+  width: 100%;
+  height: 100vh;
+  background: $almost-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include devices(tablet) {
+    flex-direction: column;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    @include devices(tablet) {
+      flex-direction: column;
+    }
+  }
+}
+
+.colorDiv {
+  height: 100vh;
+  width: 50%;
+
+  @include devices(tablet) {
+    width: 100%;
+  }
+
+  &--blue {
+    background: $main-blue;
+  }
+
+  &--orange {
+    background: $main-orange;
+  }
+}
+
+.error-box {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 64%;
+  left: calc(50% - 110px);
+  background: red;
+  opacity: 0.7;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  padding: 4rem 3.2rem;
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+
+  @include devices(tablet) {
+    width: 100%;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: $black;
+    margin-bottom: 2rem;
+  }
+
+  &__request {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: $gray;
+    margin-bottom: 2.4rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-bottom: 3.1rem;
+  }
+
+  &__para {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: $gray;
+  }
+
+  &__action {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+
+    &--blue {
+      color: $main-blue;
+    }
+
+    &--orange {
+      color: $main-orange;
+    }
+  }
+}
