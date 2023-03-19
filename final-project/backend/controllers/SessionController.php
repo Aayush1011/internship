@@ -145,7 +145,7 @@
                 $response = array('message'=> $e->getMessage());
             }
             header('Content-Type: application/json; charset=utf-8');
-            return $response;
+            echo json_encode($response);
         }
 
         function checkClosedSessionStatus() {
@@ -177,7 +177,7 @@
                 $response = array('message'=> $e->getMessage());
             }
             header('Content-Type: application/json; charset=utf-8');
-            return $response;
+            echo json_encode($response);
         }
 
 }
