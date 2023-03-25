@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+#masthead {
+  display: flex;
+  align-items: center;
+  padding: 40px 34px;
+}
+
+.site-navigation {
+  display: flex;
+}
+
+.site-branding img {
+  width: 272px;
+  object-fit: cover;
+}
+
+#primary-menu {
+  justify-content: flex-end;
+  margin-left: auto;
+  column-gap: 40px;
+  text-decoration: none;
+}
+
+#primary-menu .menu-item a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.site-footer {
+  padding: 80px;
+}
+
+.footer-navigation {
+  margin-top: 84px;
+}
+
+#menu-footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 80px;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+.menu .menu-item a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  /* color: #ffffff; */
+}
+
+.sub-menu {
+  margin-left: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.sub-menu .menu-item a {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  /* color: #ffffff; */
+  text-decoration: underline;
+}

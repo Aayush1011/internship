@@ -166,7 +166,7 @@
                         header('HTTP/1.1 200 OK');
                         $response['message'] = 'success';
                     } else {
-                        header('HTTP/1.1 404 Not Found');
+                        header('HTTP/1.1 200 Success');
                         throw new Exception("Requested session is not closed");
                     }
                 } else {
